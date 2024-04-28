@@ -20,7 +20,7 @@ namespace SWDteam.Models
         public string CategoryDescription { get; set; }
 
         [Display(Name ="Image")]
-        [DefaultValue("default.png")]
+        [DefaultValue("default1.png")]
         public string CategoryImage { get; set; }
 
         public virtual ICollection<Department> Departments { get; set; }

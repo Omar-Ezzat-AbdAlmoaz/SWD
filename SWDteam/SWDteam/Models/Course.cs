@@ -19,7 +19,7 @@ namespace SWDteam.Models
         public string CourseDescription { get; set; }
 
         [Display(Name = "Image")]
-        [DefaultValue("default.png")]
+        [DefaultValue("default2.png")]
         public string CourseImage { get; set; }
 
         [Required]
@@ -55,6 +55,6 @@ namespace SWDteam.Models
         [Required]
         public int InstructorID { get; set; }
         [ForeignKey("InstructorID")]
-        public Instructor instructor { get; set; }
+        public Instructor Instructor { get; set; }
     }
 }

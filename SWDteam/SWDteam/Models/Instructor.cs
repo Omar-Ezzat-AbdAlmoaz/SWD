@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel;
 
 namespace SWDteam.Models
 {
@@ -12,6 +13,10 @@ namespace SWDteam.Models
         [Required]
         [Display(Name = "Name")]
         public string InstructorName { get; set; }
+
+        [Display(Name = "Image")]
+        [DefaultValue("default3.png")]
+        public string InstrucrorImage { get; set; }
 
         [Required]
         [Display(Name = "Email")]
