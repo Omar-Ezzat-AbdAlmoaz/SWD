@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\DOWNLOADS\\SWD\\SWDteam\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BA5D71CB-77E3-4B35-BB1D-E07DB2AD29E1}|SWDteam\\SWDteam.csproj|d:\\downloads\\swd\\swdteam\\swdteam\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA5D71CB-77E3-4B35-BB1D-E07DB2AD29E1}|SWDteam\\SWDteam.csproj|solutionrelative:swdteam\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA5D71CB-77E3-4B35-BB1D-E07DB2AD29E1}|SWDteam\\SWDteam.csproj|d:\\downloads\\swd\\swdteam\\swdteam\\migrations\\20240429221129_alaa.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA5D71CB-77E3-4B35-BB1D-E07DB2AD29E1}|SWDteam\\SWDteam.csproj|solutionrelative:swdteam\\migrations\\20240429221129_alaa.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\DOWNLOADS\\SWD\\SWDteam\\SWDteam\\Migrations\\20240429221129_alaa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SWDteam\\Migrations\\20240429221129_alaa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "20240429221129_alaa.Designer.cs",
+              "DocumentMoniker": "D:\\DOWNLOADS\\SWD\\SWDteam\\SWDteam\\Migrations\\20240429221129_alaa.Designer.cs",
+              "RelativeDocumentMoniker": "SWDteam\\Migrations\\20240429221129_alaa.Designer.cs",
+              "ToolTip": "D:\\DOWNLOADS\\SWD\\SWDteam\\SWDteam\\Migrations\\20240429221129_alaa.Designer.cs",
+              "RelativeToolTip": "SWDteam\\Migrations\\20240429221129_alaa.Designer.cs",
+              "ViewState": "AQIAAKcBAAAAAAAAAAAAAKcBAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-29T22:12:29.857Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "20240429221129_alaa.cs",
+              "DocumentMoniker": "D:\\DOWNLOADS\\SWD\\SWDteam\\SWDteam\\Migrations\\20240429221129_alaa.cs",
+              "RelativeDocumentMoniker": "SWDteam\\Migrations\\20240429221129_alaa.cs",
+              "ToolTip": "D:\\DOWNLOADS\\SWD\\SWDteam\\SWDteam\\Migrations\\20240429221129_alaa.cs",
+              "RelativeToolTip": "SWDteam\\Migrations\\20240429221129_alaa.cs",
+              "ViewState": "AQIAAEAAAAAAAAAAAAAuwP4AAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-29T22:11:29.498Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Register.cshtml.cs",
+              "DocumentMoniker": "D:\\DOWNLOADS\\SWD\\SWDteam\\SWDteam\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "RelativeDocumentMoniker": "SWDteam\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "ToolTip": "D:\\DOWNLOADS\\SWD\\SWDteam\\SWDteam\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "RelativeToolTip": "SWDteam\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "ViewState": "AQIAAJgAAAAAAAAAAAAowIcAAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-29T21:01:21.597Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
