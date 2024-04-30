@@ -19,8 +19,12 @@ namespace SWDteam.Models
         public string CourseDescription { get; set; }
 
         [Display(Name = "Image")]
-        [DefaultValue("default2.png")]
+        [DefaultValue("DefaultCource.png")]
         public string CourseImage { get; set; }
+
+        [Required]
+        [Display(Name = "Vedio")]
+        public string CourseVedio { get; set; }
 
         [Required]
         [Display(Name = "Instructor")]

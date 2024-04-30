@@ -7,24 +7,27 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SWDteam.Data;
 using SWDteam.Models;
+using Microsoft.Extensions.Hosting;
 
 namespace SWDteam.Controllers
 {
     public class CategoriesController : Controller
     {
         private readonly AppDbContext _context;
+        private readonly IWebHostEnvironment _environment;
 
-        public CategoriesController(AppDbContext context)
+        public CategoriesController(AppDbContext context, IWebHostEnvironment environment)
         {
             _context = context;
+            _environment = environment;
         }
 
         // GET: Categories
         public async Task<IActionResult> Index()
         {
-              return _context.categories != null ? 
-                          View(await _context.categories.ToListAsync()) :
-                          Problem("Entity set 'AppDbContext.categories'  is null.");
+            return _context.categories != null ?
+                        View(await _context.categories.ToListAsync()) :
+                        Problem("Entity set 'AppDbContext.categories'  is null.");
         }
 
         // GET: Categories/Details/5
@@ -37,6 +40,9 @@ namespace SWDteam.Controllers
 
             var category = await _context.categories
                 .FirstOrDefaultAsync(m => m.CategoryId == id);
+
+            List<Department> departments = _context.departments.Where(m => m.DepartmentId == id).ToList();
+
             if (category == null)
             {
                 return NotFound();
@@ -56,15 +62,42 @@ namespace SWDteam.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CategoryId,CategoryName,CategoryDescription,CategoryImage")] Category category)
+        public async Task<IActionResult> Create([Bind("CategoryName,CategoryDescription")] Category category, IFormFile img_file)
         {
-            if (ModelState.IsValid)
+            string path = Path.Combine(_environment.WebRootPath, "Img");
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
+
+            if (img_file != null)
+            {
+                path = Path.Combine(path, img_file.FileName);
+                using (var stream = new FileStream(path, FileMode.Create))
+                {
+                    await img_file.CopyToAsync(stream);
+                    //ViewBag.Message = string.Format("<b>{0}<b> uploaded .</br>",img_file.FileName.ToString());
+                    category.CategoryImage = img_file.FileName;
+
+                }
+
+            }
+            else
+            {
+                category.CategoryImage = "DefaultCategory.png";
+            }
+
+            try
             {
                 _context.Add(category);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                _context.SaveChanges();
+                return RedirectToAction("Index");
             }
-            return View(category);
+            catch (Exception ex)
+            {
+                ViewBag.exc = ex.Message;
+            }
+            return View();
         }
 
         // GET: Categories/Edit/5
@@ -88,11 +121,27 @@ namespace SWDteam.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("CategoryId,CategoryName,CategoryDescription,CategoryImage")] Category category)
+        public async Task<IActionResult> Edit(int id, [Bind("CategoryId,CategoryName,CategoryDescription")] Category category, IFormFile img_file)
         {
             if (id != category.CategoryId)
             {
                 return NotFound();
+            }
+
+            string path = Path.Combine(_environment.WebRootPath, "Img");
+            if (img_file != null)
+            {
+                path = Path.Combine(path, img_file.FileName);
+                using (var stream = new FileStream(path, FileMode.Create))
+                {
+                    await img_file.CopyToAsync(stream);
+                    //ViewBag.Message = string.Format("<b>{0}<b> uploaded .</br>",img_file.FileName.ToString());
+                    category.CategoryImage = img_file.FileName;
+                }
+            }
+            else
+            {
+                category.CategoryImage = "DefaultCategory.png";
             }
 
             if (ModelState.IsValid)
@@ -115,6 +164,7 @@ namespace SWDteam.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+
             return View(category);
         }
 
@@ -150,14 +200,14 @@ namespace SWDteam.Controllers
             {
                 _context.categories.Remove(category);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool CategoryExists(int id)
         {
-          return (_context.categories?.Any(e => e.CategoryId == id)).GetValueOrDefault();
+            return (_context.categories?.Any(e => e.CategoryId == id)).GetValueOrDefault();
         }
     }
 }

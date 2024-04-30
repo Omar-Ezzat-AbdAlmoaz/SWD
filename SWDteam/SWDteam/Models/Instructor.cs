@@ -15,7 +15,7 @@ namespace SWDteam.Models
         public string InstructorName { get; set; }
 
         [Display(Name = "Image")]
-        [DefaultValue("default3.png")]
+        [DefaultValue("DefaultInstructor.png")]
         public string InstrucrorImage { get; set; }
 
         [Required]

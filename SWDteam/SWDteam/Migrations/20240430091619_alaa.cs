@@ -228,6 +228,7 @@ namespace SWDteam.Migrations
                     CourseName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CourseDescription = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CourseImage = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CourseVedio = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     InstructorName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CourseDuration = table.Column<int>(type: "int", nullable: false),
                     CoursePrice = table.Column<double>(type: "float", nullable: false),

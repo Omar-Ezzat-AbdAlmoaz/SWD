@@ -12,7 +12,7 @@ using SWDteam.Data;
 namespace SWDteam.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240429221129_alaa")]
+    [Migration("20240430091619_alaa")]
     partial class alaa
     {
         /// <inheritdoc />
@@ -291,6 +291,10 @@ namespace SWDteam.Migrations
 
                     b.Property<int>("CourseRate")
                         .HasColumnType("int");
+
+                    b.Property<string>("CourseVedio")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("Coursedate")
                         .HasColumnType("datetime2");

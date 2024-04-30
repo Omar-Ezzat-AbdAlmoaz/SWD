@@ -289,6 +289,10 @@ namespace SWDteam.Migrations
                     b.Property<int>("CourseRate")
                         .HasColumnType("int");
 
+                    b.Property<string>("CourseVedio")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("Coursedate")
                         .HasColumnType("datetime2");
 

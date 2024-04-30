@@ -126,11 +126,11 @@ namespace SWDteam.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = CreateUser();
+                var user = CreateUser2();
                 user.PhoneNumber = Input.PhoneNumber;
-                var uk = CreateUser2();
-                uk.FirstName = Input.FirstName;
-                uk.LastName = Input.LastName;
+                user.FirstName = Input.FirstName;
+                user.LastName = Input.LastName;
+                //var uk = CreateUser2();
 
                // user.UserName = Input.FirstName;
                // user.UserName += " " + Input.LastName;

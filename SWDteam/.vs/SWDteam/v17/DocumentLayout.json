@@ -3,16 +3,40 @@
   "WorkspaceRootPath": "D:\\DOWNLOADS\\SWD\\SWDteam\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BA5D71CB-77E3-4B35-BB1D-E07DB2AD29E1}|SWDteam\\SWDteam.csproj|d:\\downloads\\swd\\swdteam\\swdteam\\controllers\\departmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA5D71CB-77E3-4B35-BB1D-E07DB2AD29E1}|SWDteam\\SWDteam.csproj|solutionrelative:swdteam\\controllers\\departmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BA5D71CB-77E3-4B35-BB1D-E07DB2AD29E1}|SWDteam\\SWDteam.csproj|d:\\downloads\\swd\\swdteam\\swdteam\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BA5D71CB-77E3-4B35-BB1D-E07DB2AD29E1}|SWDteam\\SWDteam.csproj|solutionrelative:swdteam\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BA5D71CB-77E3-4B35-BB1D-E07DB2AD29E1}|SWDteam\\SWDteam.csproj|d:\\downloads\\swd\\swdteam\\swdteam\\migrations\\20240429221129_alaa.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA5D71CB-77E3-4B35-BB1D-E07DB2AD29E1}|SWDteam\\SWDteam.csproj|solutionrelative:swdteam\\migrations\\20240429221129_alaa.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BA5D71CB-77E3-4B35-BB1D-E07DB2AD29E1}|SWDteam\\SWDteam.csproj|d:\\downloads\\swd\\swdteam\\swdteam\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA5D71CB-77E3-4B35-BB1D-E07DB2AD29E1}|SWDteam\\SWDteam.csproj|solutionrelative:swdteam\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\DOWNLOADS\\SWD\\SWDteam\\SWDteam\\Migrations\\20240429221129_alaa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SWDteam\\Migrations\\20240429221129_alaa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BA5D71CB-77E3-4B35-BB1D-E07DB2AD29E1}|SWDteam\\SWDteam.csproj|d:\\downloads\\swd\\swdteam\\swdteam\\migrations\\20240430091619_alaa.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA5D71CB-77E3-4B35-BB1D-E07DB2AD29E1}|SWDteam\\SWDteam.csproj|solutionrelative:swdteam\\migrations\\20240430091619_alaa.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\DOWNLOADS\\SWD\\SWDteam\\SWDteam\\Migrations\\20240430091619_alaa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SWDteam\\Migrations\\20240430091619_alaa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA5D71CB-77E3-4B35-BB1D-E07DB2AD29E1}|SWDteam\\SWDteam.csproj|d:\\downloads\\swd\\swdteam\\swdteam\\models\\instructor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA5D71CB-77E3-4B35-BB1D-E07DB2AD29E1}|SWDteam\\SWDteam.csproj|solutionrelative:swdteam\\models\\instructor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA5D71CB-77E3-4B35-BB1D-E07DB2AD29E1}|SWDteam\\SWDteam.csproj|d:\\downloads\\swd\\swdteam\\swdteam\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA5D71CB-77E3-4B35-BB1D-E07DB2AD29E1}|SWDteam\\SWDteam.csproj|solutionrelative:swdteam\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA5D71CB-77E3-4B35-BB1D-E07DB2AD29E1}|SWDteam\\SWDteam.csproj|d:\\downloads\\swd\\swdteam\\swdteam\\models\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA5D71CB-77E3-4B35-BB1D-E07DB2AD29E1}|SWDteam\\SWDteam.csproj|solutionrelative:swdteam\\models\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA5D71CB-77E3-4B35-BB1D-E07DB2AD29E1}|SWDteam\\SWDteam.csproj|d:\\downloads\\swd\\swdteam\\swdteam\\views\\categories\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BA5D71CB-77E3-4B35-BB1D-E07DB2AD29E1}|SWDteam\\SWDteam.csproj|solutionrelative:swdteam\\views\\categories\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,43 +46,121 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "20240429221129_alaa.Designer.cs",
-              "DocumentMoniker": "D:\\DOWNLOADS\\SWD\\SWDteam\\SWDteam\\Migrations\\20240429221129_alaa.Designer.cs",
-              "RelativeDocumentMoniker": "SWDteam\\Migrations\\20240429221129_alaa.Designer.cs",
-              "ToolTip": "D:\\DOWNLOADS\\SWD\\SWDteam\\SWDteam\\Migrations\\20240429221129_alaa.Designer.cs",
-              "RelativeToolTip": "SWDteam\\Migrations\\20240429221129_alaa.Designer.cs",
-              "ViewState": "AQIAAKcBAAAAAAAAAAAAAKcBAAAAAAAA",
+              "DocumentIndex": 0,
+              "Title": "DepartmentsController.cs",
+              "DocumentMoniker": "D:\\DOWNLOADS\\SWD\\SWDteam\\SWDteam\\Controllers\\DepartmentsController.cs",
+              "RelativeDocumentMoniker": "SWDteam\\Controllers\\DepartmentsController.cs",
+              "ToolTip": "D:\\DOWNLOADS\\SWD\\SWDteam\\SWDteam\\Controllers\\DepartmentsController.cs",
+              "RelativeToolTip": "SWDteam\\Controllers\\DepartmentsController.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAQwBMAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-29T22:12:29.857Z",
+              "WhenOpened": "2024-04-30T10:10:40.044Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "20240430091619_alaa.Designer.cs",
+              "DocumentMoniker": "D:\\DOWNLOADS\\SWD\\SWDteam\\SWDteam\\Migrations\\20240430091619_alaa.Designer.cs",
+              "RelativeDocumentMoniker": "SWDteam\\Migrations\\20240430091619_alaa.Designer.cs",
+              "ToolTip": "D:\\DOWNLOADS\\SWD\\SWDteam\\SWDteam\\Migrations\\20240430091619_alaa.Designer.cs",
+              "RelativeToolTip": "SWDteam\\Migrations\\20240430091619_alaa.Designer.cs",
+              "ViewState": "AQIAAPQBAAAAAAAAAAAAAAECAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-30T09:17:15.084Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "20240430091619_alaa.cs",
+              "DocumentMoniker": "D:\\DOWNLOADS\\SWD\\SWDteam\\SWDteam\\Migrations\\20240430091619_alaa.cs",
+              "RelativeDocumentMoniker": "SWDteam\\Migrations\\20240430091619_alaa.cs",
+              "ToolTip": "D:\\DOWNLOADS\\SWD\\SWDteam\\SWDteam\\Migrations\\20240430091619_alaa.cs",
+              "RelativeToolTip": "SWDteam\\Migrations\\20240430091619_alaa.cs",
+              "ViewState": "AQIAAE0BAAAAAAAAAAAcwGQBAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-30T09:16:19.958Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Instructor.cs",
+              "DocumentMoniker": "D:\\DOWNLOADS\\SWD\\SWDteam\\SWDteam\\Models\\Instructor.cs",
+              "RelativeDocumentMoniker": "SWDteam\\Models\\Instructor.cs",
+              "ToolTip": "D:\\DOWNLOADS\\SWD\\SWDteam\\SWDteam\\Models\\Instructor.cs",
+              "RelativeToolTip": "SWDteam\\Models\\Instructor.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACYAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-30T09:14:19.186Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Category.cs",
+              "DocumentMoniker": "D:\\DOWNLOADS\\SWD\\SWDteam\\SWDteam\\Models\\Category.cs",
+              "RelativeDocumentMoniker": "SWDteam\\Models\\Category.cs",
+              "ToolTip": "D:\\DOWNLOADS\\SWD\\SWDteam\\SWDteam\\Models\\Category.cs",
+              "RelativeToolTip": "SWDteam\\Models\\Category.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAQwBcAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-30T09:13:42.822Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Course.cs",
+              "DocumentMoniker": "D:\\DOWNLOADS\\SWD\\SWDteam\\SWDteam\\Models\\Course.cs",
+              "RelativeDocumentMoniker": "SWDteam\\Models\\Course.cs",
+              "ToolTip": "D:\\DOWNLOADS\\SWD\\SWDteam\\SWDteam\\Models\\Course.cs",
+              "RelativeToolTip": "SWDteam\\Models\\Course.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAYwBYAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-30T09:12:08.118Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\DOWNLOADS\\SWD\\SWDteam\\SWDteam\\Views\\Categories\\Create.cshtml",
+              "RelativeDocumentMoniker": "SWDteam\\Views\\Categories\\Create.cshtml",
+              "ToolTip": "D:\\DOWNLOADS\\SWD\\SWDteam\\SWDteam\\Views\\Categories\\Create.cshtml",
+              "RelativeToolTip": "SWDteam\\Views\\Categories\\Create.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-30T09:10:39.709Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "20240429221129_alaa.cs",
-              "DocumentMoniker": "D:\\DOWNLOADS\\SWD\\SWDteam\\SWDteam\\Migrations\\20240429221129_alaa.cs",
-              "RelativeDocumentMoniker": "SWDteam\\Migrations\\20240429221129_alaa.cs",
-              "ToolTip": "D:\\DOWNLOADS\\SWD\\SWDteam\\SWDteam\\Migrations\\20240429221129_alaa.cs",
-              "RelativeToolTip": "SWDteam\\Migrations\\20240429221129_alaa.cs",
-              "ViewState": "AQIAAEAAAAAAAAAAAAAuwP4AAAA8AAAA",
+              "Title": "CategoriesController.cs",
+              "DocumentMoniker": "D:\\DOWNLOADS\\SWD\\SWDteam\\SWDteam\\Controllers\\CategoriesController.cs",
+              "RelativeDocumentMoniker": "SWDteam\\Controllers\\CategoriesController.cs",
+              "ToolTip": "D:\\DOWNLOADS\\SWD\\SWDteam\\SWDteam\\Controllers\\CategoriesController.cs",
+              "RelativeToolTip": "SWDteam\\Controllers\\CategoriesController.cs",
+              "ViewState": "AQIAALMAAAAAAAAAAAAwwLwAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-29T22:11:29.498Z",
+              "WhenOpened": "2024-04-30T09:00:11.891Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Register.cshtml.cs",
               "DocumentMoniker": "D:\\DOWNLOADS\\SWD\\SWDteam\\SWDteam\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
               "RelativeDocumentMoniker": "SWDteam\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
               "ToolTip": "D:\\DOWNLOADS\\SWD\\SWDteam\\SWDteam\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
               "RelativeToolTip": "SWDteam\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
-              "ViewState": "AQIAAJgAAAAAAAAAAAAowIcAAAA4AAAA",
+              "ViewState": "AQIAAHYAAAAAAAAAAAAiwIsAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-29T21:01:21.597Z",
               "EditorCaption": ""
