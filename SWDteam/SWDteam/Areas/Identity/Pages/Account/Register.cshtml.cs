@@ -87,7 +87,7 @@ namespace SWDteam.Areas.Identity.Pages.Account
             /// </summary>
             [Required]
             [EmailAddress]
-            [RegularExpression(@"^[^@\s]+@[^@\s]+\.[^@\s]+\.com$", ErrorMessage = "Email must contain '.com'.")]
+            [RegularExpression(@"^[^@\s]+@[^@\s]+\.[^@\s]+$", ErrorMessage = "Email must contain a valid domain.")]
             [Display(Name = "Email")]
             public string Email { get; set; }
             [Required]
