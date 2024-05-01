@@ -87,11 +87,13 @@ namespace SWDteam.Areas.Identity.Pages.Account
             /// </summary>
             [Required]
             [EmailAddress]
+            [RegularExpression(@"^[^@\s]+@[^@\s]+\.[^@\s]+\.com$", ErrorMessage = "Email must contain '.com'.")]
             [Display(Name = "Email")]
             public string Email { get; set; }
             [Required]
             [Phone]
             [Display(Name = "Phone")]
+            [RegularExpression(@"^\d{11}$", ErrorMessage = "Phone number must be 11 digits.")]
             public string PhoneNumber { get; set; }
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used

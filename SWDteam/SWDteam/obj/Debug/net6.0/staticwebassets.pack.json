@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\SWDteam.bundle.scp.css"
     },
     {
+      "Id": "D:\\DOWNLOADS\\SWD\\SWDteam\\SWDteam\\wwwroot\\Img\\183967.jpg",
+      "PackagePath": "staticwebassets\\Img\\183967.jpg"
+    },
+    {
+      "Id": "D:\\DOWNLOADS\\SWD\\SWDteam\\SWDteam\\wwwroot\\Img\\3.jpeg",
+      "PackagePath": "staticwebassets\\Img\\3.jpeg"
+    },
+    {
       "Id": "D:\\DOWNLOADS\\SWD\\SWDteam\\SWDteam\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
