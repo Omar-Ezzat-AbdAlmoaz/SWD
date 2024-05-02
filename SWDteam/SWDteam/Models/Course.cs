@@ -52,7 +52,7 @@ namespace SWDteam.Models
 
         [Required]
         public int DepartmentID { get; set; }
-        [ForeignKey("DeprtmentId")]
+        [ForeignKey("DepartmentID")]
         public Department Department { get; set; }
 
 

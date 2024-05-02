@@ -7,7 +7,7 @@ namespace SWDteam.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int DepartmentId { get; set; }
+        public int DepartmentID { get; set; }
 
         [Required]
         [Display(Name = "Name")]

@@ -12,7 +12,7 @@ using SWDteam.Data;
 namespace SWDteam.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240430091619_alaa")]
+    [Migration("20240502164910_alaa")]
     partial class alaa
     {
         /// <inheritdoc />
@@ -302,9 +302,6 @@ namespace SWDteam.Migrations
                     b.Property<int>("DepartmentID")
                         .HasColumnType("int");
 
-                    b.Property<int>("DeprtmentId")
-                        .HasColumnType("int");
-
                     b.Property<int>("InstructorID")
                         .HasColumnType("int");
 
@@ -314,7 +311,7 @@ namespace SWDteam.Migrations
 
                     b.HasKey("CourseId");
 
-                    b.HasIndex("DeprtmentId");
+                    b.HasIndex("DepartmentID");
 
                     b.HasIndex("InstructorID");
 
@@ -323,11 +320,11 @@ namespace SWDteam.Migrations
 
             modelBuilder.Entity("SWDteam.Models.Department", b =>
                 {
-                    b.Property<int>("DepartmentId")
+                    b.Property<int>("DepartmentID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DepartmentId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DepartmentID"));
 
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
@@ -336,7 +333,7 @@ namespace SWDteam.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("DepartmentId");
+                    b.HasKey("DepartmentID");
 
                     b.HasIndex("CategoryId");
 
@@ -404,7 +401,7 @@ namespace SWDteam.Migrations
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
@@ -413,7 +410,7 @@ namespace SWDteam.Migrations
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
@@ -422,7 +419,7 @@ namespace SWDteam.Migrations
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
@@ -431,13 +428,13 @@ namespace SWDteam.Migrations
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
@@ -446,7 +443,7 @@ namespace SWDteam.Migrations
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
@@ -454,14 +451,14 @@ namespace SWDteam.Migrations
                 {
                     b.HasOne("SWDteam.Models.Department", "Department")
                         .WithMany("Courses")
-                        .HasForeignKey("DeprtmentId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .HasForeignKey("DepartmentID")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("SWDteam.Models.Instructor", "Instructor")
                         .WithMany("Courses")
                         .HasForeignKey("InstructorID")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Department");
@@ -474,7 +471,7 @@ namespace SWDteam.Migrations
                     b.HasOne("SWDteam.Models.Category", "Category")
                         .WithMany("Departments")
                         .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Category");
@@ -485,7 +482,7 @@ namespace SWDteam.Migrations
                     b.HasOne("SWDteam.Models.Department", "Department")
                         .WithMany("Instructors")
                         .HasForeignKey("DepartmentID")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Department");

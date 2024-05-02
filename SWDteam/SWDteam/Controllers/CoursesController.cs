@@ -22,7 +22,7 @@ namespace SWDteam.Controllers
         // GET: Courses
         public async Task<IActionResult> Index()
         {
-            var appDbContext = _context.courses.Include(c => c.Instructor);
+            var appDbContext = _context.courses.Include(c => c.Department).Include(c => c.Instructor);
             return View(await appDbContext.ToListAsync());
         }
 
@@ -35,6 +35,7 @@ namespace SWDteam.Controllers
             }
 
             var course = await _context.courses
+                .Include(c => c.Department)
                 .Include(c => c.Instructor)
                 .FirstOrDefaultAsync(m => m.CourseId == id);
             if (course == null)
@@ -48,6 +49,7 @@ namespace SWDteam.Controllers
         // GET: Courses/Create
         public IActionResult Create()
         {
+            ViewData["DepartmentID"] = new SelectList(_context.departments, "DepartmentID", "DepartmentName");
             ViewData["InstructorID"] = new SelectList(_context.instructors, "InstructorId", "InstructorEmail");
             return View();
         }
@@ -57,14 +59,15 @@ namespace SWDteam.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CourseId,CourseName,CourseDescription,CourseImage,InstructorName,CourseDuration,CoursePrice,CoursePurchases,CourseRate,Coursedate,DepartmentID,InstructorID")] Course course)
+        public async Task<IActionResult> Create([Bind("CourseId,CourseName,CourseDescription,CourseImage,CourseVedio,InstructorName,CourseDuration,CoursePrice,CoursePurchases,CourseRate,Coursedate,DepartmentID,InstructorID")] Course course)
         {
-            if (ModelState.IsValid)
-            {
+            //if (ModelState.IsValid)
+            //{
                 _context.Add(course);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
-            }
+          //  }
+            ViewData["DepartmentID"] = new SelectList(_context.departments, "DepartmentID", "DepartmentName", course.DepartmentID);
             ViewData["InstructorID"] = new SelectList(_context.instructors, "InstructorId", "InstructorEmail", course.InstructorID);
             return View(course);
         }
@@ -82,6 +85,7 @@ namespace SWDteam.Controllers
             {
                 return NotFound();
             }
+            ViewData["DepartmentID"] = new SelectList(_context.departments, "DepartmentID", "DepartmentName", course.DepartmentID);
             ViewData["InstructorID"] = new SelectList(_context.instructors, "InstructorId", "InstructorEmail", course.InstructorID);
             return View(course);
         }
@@ -91,7 +95,7 @@ namespace SWDteam.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("CourseId,CourseName,CourseDescription,CourseImage,InstructorName,CourseDuration,CoursePrice,CoursePurchases,CourseRate,Coursedate,DepartmentID,InstructorID")] Course course)
+        public async Task<IActionResult> Edit(int id, [Bind("CourseId,CourseName,CourseDescription,CourseImage,CourseVedio,InstructorName,CourseDuration,CoursePrice,CoursePurchases,CourseRate,Coursedate,DepartmentID,InstructorID")] Course course)
         {
             if (id != course.CourseId)
             {
@@ -118,6 +122,7 @@ namespace SWDteam.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["DepartmentID"] = new SelectList(_context.departments, "DepartmentID", "DepartmentName", course.DepartmentID);
             ViewData["InstructorID"] = new SelectList(_context.instructors, "InstructorId", "InstructorEmail", course.InstructorID);
             return View(course);
         }
@@ -131,6 +136,7 @@ namespace SWDteam.Controllers
             }
 
             var course = await _context.courses
+                .Include(c => c.Department)
                 .Include(c => c.Instructor)
                 .FirstOrDefaultAsync(m => m.CourseId == id);
             if (course == null)

@@ -65,8 +65,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="DepartmentID" class="control-label"></label>
-                <input asp-for="DepartmentID" class="form-control" />
-                <span asp-validation-for="DepartmentID" class="text-danger"></span>
+                <select asp-for="DepartmentID" class ="form-control" asp-items="ViewBag.DepartmentID"></select>
             </div>
             <div class="form-group">
                 <label asp-for="InstructorID" class="control-label"></label>

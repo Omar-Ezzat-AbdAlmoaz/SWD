@@ -48,7 +48,7 @@ namespace SWDteam.Controllers
         // GET: Instructors/Create
         public IActionResult Create()
         {
-            ViewData["DepartmentID"] = new SelectList(_context.departments, "DepartmentId", "DepartmentName");
+            ViewData["DepartmentID"] = new SelectList(_context.departments, "DepartmentID", "DepartmentName");
             return View();
         }
 
@@ -59,13 +59,11 @@ namespace SWDteam.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("InstructorId,InstructorName,InstrucrorImage,InstructorEmail,Instructorbiography,Instructorexperience,InstructorRate,DepartmentID")] Instructor instructor)
         {
-            if (ModelState.IsValid)
-            {
+         
                 _context.Add(instructor);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
-            }
-            ViewData["DepartmentID"] = new SelectList(_context.departments, "DepartmentId", "DepartmentName", instructor.DepartmentID);
+            ViewData["DepartmentID"] = new SelectList(_context.departments, "DepartmentID", "DepartmentName", instructor.DepartmentID);
             return View(instructor);
         }
 
@@ -82,7 +80,7 @@ namespace SWDteam.Controllers
             {
                 return NotFound();
             }
-            ViewData["DepartmentID"] = new SelectList(_context.departments, "DepartmentId", "DepartmentName", instructor.DepartmentID);
+            ViewData["DepartmentID"] = new SelectList(_context.departments, "DepartmentID", "DepartmentName", instructor.DepartmentID);
             return View(instructor);
         }
 
@@ -118,7 +116,7 @@ namespace SWDteam.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["DepartmentID"] = new SelectList(_context.departments, "DepartmentId", "DepartmentName", instructor.DepartmentID);
+            ViewData["DepartmentID"] = new SelectList(_context.departments, "DepartmentID", "DepartmentName", instructor.DepartmentID);
             return View(instructor);
         }
 

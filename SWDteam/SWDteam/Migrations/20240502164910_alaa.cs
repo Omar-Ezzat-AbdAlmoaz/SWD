@@ -178,14 +178,14 @@ namespace SWDteam.Migrations
                 name: "departments",
                 columns: table => new
                 {
-                    DepartmentId = table.Column<int>(type: "int", nullable: false)
+                    DepartmentID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     DepartmentName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CategoryId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_departments", x => x.DepartmentId);
+                    table.PrimaryKey("PK_departments", x => x.DepartmentID);
                     table.ForeignKey(
                         name: "FK_departments_categories_CategoryId",
                         column: x => x.CategoryId,
@@ -215,7 +215,7 @@ namespace SWDteam.Migrations
                         name: "FK_instructors_departments_DepartmentID",
                         column: x => x.DepartmentID,
                         principalTable: "departments",
-                        principalColumn: "DepartmentId",
+                        principalColumn: "DepartmentID",
                         onDelete: ReferentialAction.NoAction);
                 });
 
@@ -236,17 +236,16 @@ namespace SWDteam.Migrations
                     CourseRate = table.Column<int>(type: "int", nullable: false),
                     Coursedate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     DepartmentID = table.Column<int>(type: "int", nullable: false),
-                    DeprtmentId = table.Column<int>(type: "int", nullable: false),
                     InstructorID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_courses", x => x.CourseId);
                     table.ForeignKey(
-                        name: "FK_courses_departments_DeprtmentId",
-                        column: x => x.DeprtmentId,
+                        name: "FK_courses_departments_DepartmentID",
+                        column: x => x.DepartmentID,
                         principalTable: "departments",
-                        principalColumn: "DepartmentId",
+                        principalColumn: "DepartmentID",
                         onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_courses_instructors_InstructorID",
@@ -296,9 +295,9 @@ namespace SWDteam.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_courses_DeprtmentId",
+                name: "IX_courses_DepartmentID",
                 table: "courses",
-                column: "DeprtmentId");
+                column: "DepartmentID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_courses_InstructorID",

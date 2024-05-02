@@ -36,7 +36,7 @@ namespace SWDteam.Controllers
 
             var department = await _context.departments
                 .Include(d => d.Category)
-                .FirstOrDefaultAsync(m => m.DepartmentId == id);
+                .FirstOrDefaultAsync(m => m.DepartmentID == id);
             if (department == null)
             {
                 return NotFound();
@@ -57,14 +57,13 @@ namespace SWDteam.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("DepartmentId,DepartmentName,CategoryId")] Department department)
+        public async Task<IActionResult> Create([Bind("DepartmentID,DepartmentName,CategoryId")] Department department)
         {
-            if (ModelState.IsValid)
-            {
+          
                 _context.Add(department);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
-            }
+
             ViewData["CategoryId"] = new SelectList(_context.categories, "CategoryId", "CategoryDescription", department.CategoryId);
             return View(department);
         }
@@ -93,7 +92,7 @@ namespace SWDteam.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("DepartmentId,DepartmentName,CategoryId")] Department department)
         {
-            if (id != department.DepartmentId)
+            if (id != department.DepartmentID)
             {
                 return NotFound();
             }
@@ -107,7 +106,7 @@ namespace SWDteam.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!DepartmentExists(department.DepartmentId))
+                    if (!DepartmentExists(department.DepartmentID))
                     {
                         return NotFound();
                     }
@@ -132,7 +131,7 @@ namespace SWDteam.Controllers
 
             var department = await _context.departments
                 .Include(d => d.Category)
-                .FirstOrDefaultAsync(m => m.DepartmentId == id);
+                .FirstOrDefaultAsync(m => m.DepartmentID == id);
             if (department == null)
             {
                 return NotFound();
@@ -162,7 +161,7 @@ namespace SWDteam.Controllers
 
         private bool DepartmentExists(int id)
         {
-          return (_context.departments?.Any(e => e.DepartmentId == id)).GetValueOrDefault();
+          return (_context.departments?.Any(e => e.DepartmentID== id)).GetValueOrDefault();
         }
     }
 }

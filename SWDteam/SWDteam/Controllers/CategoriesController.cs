@@ -41,7 +41,7 @@ namespace SWDteam.Controllers
             var category = await _context.categories
                 .FirstOrDefaultAsync(m => m.CategoryId == id);
 
-            List<Department> departments = _context.departments.Where(m => m.DepartmentId == id).ToList();
+            List<Department> departments = _context.departments.Where(m => m.DepartmentID == id).ToList();
 
             if (category == null)
             {
