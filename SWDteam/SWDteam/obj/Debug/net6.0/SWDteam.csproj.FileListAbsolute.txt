@@ -573,3 +573,4 @@ D:\DOWNLOADS\SWD\SWDteam\SWDteam\bin\Debug\net6.0\runtimes\win-arm\native\e_sqli
 D:\DOWNLOADS\SWD\SWDteam\SWDteam\bin\Debug\net6.0\runtimes\win-arm64\native\e_sqlite3.dll
 D:\DOWNLOADS\SWD\SWDteam\SWDteam\bin\Debug\net6.0\runtimes\win-x64\native\e_sqlite3.dll
 D:\DOWNLOADS\SWD\SWDteam\SWDteam\bin\Debug\net6.0\runtimes\win-x86\native\e_sqlite3.dll
+D:\DOWNLOADS\SWD\SWDteam\SWDteam\bin\Debug\net6.0\BouncyCastle.Crypto.dll

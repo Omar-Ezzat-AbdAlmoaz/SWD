@@ -18,12 +18,13 @@ namespace SWDteam.Data
         public DbSet<Course> courses { get; set; }
         public DbSet<Department> departments { get; set; }
         public DbSet<Instructor> instructors { get; set; }
-
+        public DbSet<Admin> admins { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
             builder.ApplyConfiguration(new ApplicationUserEntityConfiguration());
         }
+       
     }
 
     public class ApplicationUserEntityConfiguration : IEntityTypeConfiguration<AppUser>
@@ -36,4 +37,5 @@ namespace SWDteam.Data
         }
 
     }
+
 }
