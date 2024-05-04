@@ -13,7 +13,7 @@ namespace SWDteam.Controllers
         {
             _dbcontext = context;
         }
-        public IActionResult Index()
+        public IActionResult Index2()
         {
             return View();
         }
@@ -47,7 +47,7 @@ namespace SWDteam.Controllers
                 if (user!=null && user.password==model.password)
                 {
 
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index2", "Admin");
                 }
                 else
                 {
