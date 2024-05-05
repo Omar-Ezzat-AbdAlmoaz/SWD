@@ -46,6 +46,9 @@ namespace SWDteam.Controllers
                var user= _dbcontext.admins.FirstOrDefault(u => u.Email == model.Email);
                 if (user!=null && user.password==model.password)
                 {
+                     HttpContext.Session.SetString("Name",user.Email);
+                    //ViewBag.AdminName = model.Email;
+                    TempData["AdminName"] = user.Email;  // Store in TempData
 
                     return RedirectToAction("Index2", "Admin");
                 }
@@ -55,6 +58,15 @@ namespace SWDteam.Controllers
                 }
             }
             return View(model);
+        }
+        [HttpPost]
+        public IActionResult Logout()
+        {
+            // Clear session variables
+            HttpContext.Session.Clear();
+
+            // Redirect to the login page
+            return RedirectToAction("Login2", "ADMIN");
         }
     }
 }

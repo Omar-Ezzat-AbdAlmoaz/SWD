@@ -1,12 +1,17 @@
 ﻿@using Microsoft.AspNetCore.Identity
-
-@inject SignInManager<IdentityUser> SignInManager
-@inject UserManager<IdentityUser> UserManager2
+@using Microsoft.AspNetCore.Http
 
 <ul class="navbar-nav">
-    @if (SignInManager.IsSignedIn(User))
+    @if (!string.IsNullOrEmpty((string)TempData["AdminName"]))
     {
-        
+        <li class="nav-item">
+            <span class="nav-link">Welcome, @TempData["AdminName"]!</span>
+        </li>
+        <li class="nav-item">
+            <form id="logoutForm" asp-controller="ADMIN" asp-action="Logout" method="post">
+                <button type="submit" class="nav-link btn btn-link">Logout</button>
+            </form>
+        </li>
     }
     else
     {
@@ -21,7 +26,5 @@
                 </ul>
             </div>
         </div>
-
-
     }
 </ul>
