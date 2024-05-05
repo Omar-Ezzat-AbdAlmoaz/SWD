@@ -1,8 +1,24 @@
-﻿@{
+﻿@model IEnumerable<SWDteam.Models.Category>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Skills for your present and your future</h1>
+</div>
+<div class="text-center" style="margin:10px 0px 30px 0px">
+    <img src="~/Img/photoHome.jpg" alt="dept_image_here" style="border-radius:5%;width:800px; height:300px">
+</div>
+<h2>Top Categories</h2>
+<div style="display:ruby;flex-wrap:wrap;margin: 0 -1.6rem -3.2rem 0;">
+    @foreach (var category in Model)
+    {
+        <div style="display:block; margin: 0 1.6rem 1.6rem 0;">
+            <a asp-controller="Categories" asp-action="Details" asp-route-id="@category.CategoryId">
+                <img src="~/Img/@category.CategoryImage" alt="dept_image_here" style="border-radius:20%;width:200px; height:200px">
+            </a>
+            <span><p>@category.CategoryName</p></span>
+        </div>
+    }
 </div>

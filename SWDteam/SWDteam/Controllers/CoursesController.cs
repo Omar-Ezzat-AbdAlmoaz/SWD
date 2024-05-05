@@ -142,13 +142,44 @@ namespace SWDteam.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("CourseId,CourseName,CourseDescription,CourseImage,CourseVedio,CourseDuration,CoursePrice,Coursedate,DepartmentID,InstructorID")] Course course)
+        public async Task<IActionResult> Edit(int id, [Bind("CourseId,CourseName,CourseDescription,CourseDuration,CoursePrice,Coursedate,DepartmentID,InstructorID")] Course course,IFormFile img_file,IFormFile vedio_file)
         {
             if (id != course.CourseId)
             {
                 return NotFound();
             }
+            string path = Path.Combine(_environment.WebRootPath, "Img");
 
+            if (img_file != null)
+            {
+                path = Path.Combine(path, img_file.FileName);
+                using (var stream = new FileStream(path, FileMode.Create))
+                {
+                    await img_file.CopyToAsync(stream);
+                    //ViewBag.Message = string.Format("<b>{0}<b> uploaded .</br>",img_file.FileName.ToString());
+                    course.CourseImage = img_file.FileName;
+                }
+
+            }
+            else
+            {
+                course.CourseImage = "DefaultCourse.png";
+            }
+
+            string pathVedio = Path.Combine(_environment.WebRootPath, "Vedio");
+
+
+            if (vedio_file != null)
+            {
+                pathVedio = Path.Combine(pathVedio, vedio_file.FileName);
+                using (var stream = new FileStream(pathVedio, FileMode.Create))
+                {
+                    await vedio_file.CopyToAsync(stream);
+                    //ViewBag.Message = string.Format("<b>{0}<b> uploaded .</br>",img_file.FileName.ToString());
+                    course.CourseVedio = vedio_file.FileName;
+                }
+
+            }
             if (ModelState.IsValid)
             {
                 try

@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using SWDteam.Data;
 using SWDteam.Models;
 using System.Diagnostics;
 
@@ -7,19 +9,23 @@ namespace SWDteam.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly AppDbContext _context;
+        private readonly IWebHostEnvironment _environment;
+        public HomeController(ILogger<HomeController> logger,AppDbContext context,IWebHostEnvironment environment)
         {
             _logger = logger;
+            _context = context;
+            _environment = environment;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            return View(await _context.categories.ToListAsync());
         }
 
         public IActionResult Privacy()
         {
+
             return View();
         }
 
