@@ -5,41 +5,17 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Details</h1>
+<h1>@Model.CourseName</h1>
+<img src="~/Img/@Model.CourseImage" style="width: 150px;border-radius:30%" alt="Avatar" />
 
 <div>
-    <h4>Course</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CourseName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CourseName)
-        </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.CourseDescription)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.CourseDescription)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CourseImage)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CourseImage)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CourseVedio)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CourseVedio)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.InstructorName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.InstructorName)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.CourseDuration)
@@ -52,18 +28,6 @@
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.CoursePrice)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CoursePurchases)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CoursePurchases)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CourseRate)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CourseRate)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Coursedate)
@@ -81,11 +45,16 @@
             @Html.DisplayNameFor(model => model.Instructor)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Instructor.InstructorEmail)
+            @Html.DisplayFor(model => model.Instructor.InstructorName)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.CourseId">Edit</a> |
+    <video width="320" height="240" controls>
+        <source src="~/Vedio/@Model.CourseVedio" type="video/mp4">
+    </video>
+</div>
+<div>
+    <a class = "btn btn-primary" asp-action="Edit" asp-route-id="@Model?.CourseId">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>

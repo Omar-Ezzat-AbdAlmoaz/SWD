@@ -5,13 +5,13 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Create</h1>
+<h1>Add New</h1>
 
 <h4>Course</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
+        <form asp-action="Create" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="CourseName" class="control-label"></label>
@@ -20,23 +20,18 @@
             </div>
             <div class="form-group">
                 <label asp-for="CourseDescription" class="control-label"></label>
-                <input asp-for="CourseDescription" class="form-control" />
+                <textarea asp-for="CourseDescription" class="form-control"></textarea>
                 <span asp-validation-for="CourseDescription" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="CourseImage" class="control-label"></label>
-                <input asp-for="CourseImage" class="form-control" />
+                <input asp-for="CourseImage" class="form-control" type="file" name="img_file" accept="image/*" />
                 <span asp-validation-for="CourseImage" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="CourseVedio" class="control-label"></label>
-                <input asp-for="CourseVedio" class="form-control" />
+                <input asp-for="CourseVedio" class="form-control" type="file" name="vedio_file"/>
                 <span asp-validation-for="CourseVedio" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="InstructorName" class="control-label"></label>
-                <input asp-for="InstructorName" class="form-control" />
-                <span asp-validation-for="InstructorName" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="CourseDuration" class="control-label"></label>
@@ -47,16 +42,6 @@
                 <label asp-for="CoursePrice" class="control-label"></label>
                 <input asp-for="CoursePrice" class="form-control" />
                 <span asp-validation-for="CoursePrice" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CoursePurchases" class="control-label"></label>
-                <input asp-for="CoursePurchases" class="form-control" />
-                <span asp-validation-for="CoursePurchases" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CourseRate" class="control-label"></label>
-                <input asp-for="CourseRate" class="form-control" />
-                <span asp-validation-for="CourseRate" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Coursedate" class="control-label"></label>

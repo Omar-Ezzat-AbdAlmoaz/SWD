@@ -6,6 +6,7 @@
 }
 
 <h1>@Model.CategoryName</h1>
+<img src="~/Img/@Model.CategoryImage" style="width: 150px;border-radius:30%" alt="Avatar" />
 
 <hr />
 <div class="row">
@@ -25,8 +26,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="CategoryImage" class="control-label"></label>
-                <img src="~/Img/@Model.CategoryImage" style="width: 150px;border-radius:50%" alt="Avatar" />
-                <input asp-for="CategoryImage" class="form-control" type="file" name="img_file" />
+                <input asp-for="CategoryImage" class="form-control" type="file" name="img_file" accept="image/*"/>
                 <span asp-validation-for="CategoryImage" class="text-danger"></span>
             </div>
             <div class="form-group">

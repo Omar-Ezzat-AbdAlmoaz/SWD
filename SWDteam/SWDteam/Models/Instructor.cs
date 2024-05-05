@@ -32,10 +32,6 @@ namespace SWDteam.Models
         public string Instructorexperience { get; set; }
 
         [Required]
-        [Display(Name = "Rate")]
-        public int InstructorRate { get; set; }
-
-        [Required]
         public int DepartmentID { get; set; }
         [ForeignKey("DepartmentID")]
         public Department Department { get; set; }

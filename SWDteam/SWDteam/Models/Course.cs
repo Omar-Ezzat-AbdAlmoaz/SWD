@@ -27,24 +27,12 @@ namespace SWDteam.Models
         public string CourseVedio { get; set; }
 
         [Required]
-        [Display(Name = "Instructor")]
-        public string InstructorName { get; set; }
-
-        [Required]
         [Display(Name = "Duration")]
         public int CourseDuration { get; set; }
 
         [Required]
         [Display(Name = "Price")]
         public double CoursePrice { get; set; }
-
-        [Required]
-        [Display(Name = "Purchases")]
-        public int CoursePurchases { get; set; }
-
-        [Required]
-        [Display(Name = "Rate")]
-        public int CourseRate { get; set; }
 
         [Required]
         [Display(Name = "date")]

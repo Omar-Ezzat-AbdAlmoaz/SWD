@@ -14,6 +14,10 @@ namespace SWDteam.Models
         public string DepartmentName { get; set; }
 
         [Required]
+        [Display(Name = "Description")]
+        public string DepartmentDescription { get; set; }
+
+        [Required]
         public int CategoryId { get; set; }
         [ForeignKey("CategoryId")]
         public Category Category { get; set; }

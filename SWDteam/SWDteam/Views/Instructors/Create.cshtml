@@ -5,13 +5,13 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Create</h1>
+<h1>Add New</h1>
 
 <h4>Instructor</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
+        <form asp-action="Create" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="InstructorName" class="control-label"></label>
@@ -20,7 +20,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="InstrucrorImage" class="control-label"></label>
-                <input asp-for="InstrucrorImage" class="form-control" />
+                <input asp-for="InstrucrorImage" class="form-control" type="file" name="img_file" accept="image/*" />
                 <span asp-validation-for="InstrucrorImage" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -30,18 +30,13 @@
             </div>
             <div class="form-group">
                 <label asp-for="Instructorbiography" class="control-label"></label>
-                <input asp-for="Instructorbiography" class="form-control" />
+                <textarea asp-for="Instructorbiography" class="form-control"></textarea> 
                 <span asp-validation-for="Instructorbiography" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Instructorexperience" class="control-label"></label>
-                <input asp-for="Instructorexperience" class="form-control" />
+                <textarea asp-for="Instructorexperience" class="form-control"></textarea>
                 <span asp-validation-for="Instructorexperience" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="InstructorRate" class="control-label"></label>
-                <input asp-for="InstructorRate" class="form-control" />
-                <span asp-validation-for="InstructorRate" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DepartmentID" class="control-label"></label>

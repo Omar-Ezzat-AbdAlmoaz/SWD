@@ -7,12 +7,19 @@
 
 <h1>@Model.DepartmentName</h1>
 
-<div> 
+<div>
     <dl class="row">
-        <dt class = "col-sm-2">
+          <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DepartmentDescription)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DepartmentDescription)
+        </dd>
+
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Category)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Category.CategoryName)
         </dd>
 
@@ -21,21 +28,48 @@
         </dt>
         <dd class="col-sm-10">
             <table class="table table-bordered">
-                <tr><th>Courses</th></tr>
+
                 @if (Model.Courses != null)
                 {
+                    <tr><th>Courses</th></tr>
                     @foreach (var item in Model.Courses)
                     {
                         <tr>
-                            <td> @Html.DisplayFor(modelItem => item.CourseName)</td>                         
+                            <td> @Html.DisplayFor(modelItem => item.CourseName)</td>
                         </tr>
                     }
+                }
+                else
+                {
+                    <tr><th>Not Found</th></tr>
+                }
+            </table>
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Instructors)
+        </dt>
+        <dd class="col-sm-10">
+            <table class="table table-bordered">
+
+                @if (Model.Instructors != null)
+                {
+                    <tr><th>Instructors</th></tr>
+                    @foreach (var item in Model.Instructors)
+                    {
+                        <tr>
+                            <td> @Html.DisplayFor(modelItem => item.InstructorName)</td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr><th>Not Found</th></tr>
                 }
             </table>
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.DepartmentID">Edit</a> |
+    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@Model?.DepartmentID">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>

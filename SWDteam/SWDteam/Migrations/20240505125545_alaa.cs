@@ -20,7 +20,7 @@ namespace SWDteam.Migrations
                     FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    password = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    password = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     ConfirmPassword = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
@@ -198,6 +198,7 @@ namespace SWDteam.Migrations
                     DepartmentID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     DepartmentName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DepartmentDescription = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CategoryId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -222,7 +223,6 @@ namespace SWDteam.Migrations
                     InstructorEmail = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Instructorbiography = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Instructorexperience = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    InstructorRate = table.Column<int>(type: "int", nullable: false),
                     DepartmentID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -246,11 +246,8 @@ namespace SWDteam.Migrations
                     CourseDescription = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CourseImage = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CourseVedio = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    InstructorName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CourseDuration = table.Column<int>(type: "int", nullable: false),
                     CoursePrice = table.Column<double>(type: "float", nullable: false),
-                    CoursePurchases = table.Column<int>(type: "int", nullable: false),
-                    CourseRate = table.Column<int>(type: "int", nullable: false),
                     Coursedate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     DepartmentID = table.Column<int>(type: "int", nullable: false),
                     InstructorID = table.Column<int>(type: "int", nullable: false)

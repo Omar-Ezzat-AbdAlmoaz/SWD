@@ -13,10 +13,11 @@ namespace SWDteam.Controllers
     public class InstructorsController : Controller
     {
         private readonly AppDbContext _context;
-
-        public InstructorsController(AppDbContext context)
+        private readonly IWebHostEnvironment _environment;
+        public InstructorsController(AppDbContext context, IWebHostEnvironment environment)
         {
             _context = context;
+            _environment = environment;
         }
 
         // GET: Instructors
@@ -37,6 +38,7 @@ namespace SWDteam.Controllers
             var instructor = await _context.instructors
                 .Include(i => i.Department)
                 .FirstOrDefaultAsync(m => m.InstructorId == id);
+            List<Course> courses = _context.courses.Where(m => m.CourseId == id).ToList();
             if (instructor == null)
             {
                 return NotFound();
@@ -57,12 +59,42 @@ namespace SWDteam.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("InstructorId,InstructorName,InstrucrorImage,InstructorEmail,Instructorbiography,Instructorexperience,InstructorRate,DepartmentID")] Instructor instructor)
+        public async Task<IActionResult> Create([Bind("InstructorName,InstructorEmail,Instructorbiography,Instructorexperience,DepartmentID")] Instructor instructor, IFormFile img_file)
         {
-         
+
+            string path = Path.Combine(_environment.WebRootPath, "Img");
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
+
+            if (img_file != null)
+            {
+                path = Path.Combine(path, img_file.FileName);
+                using (var stream = new FileStream(path, FileMode.Create))
+                {
+                    await img_file.CopyToAsync(stream);
+                    ViewBag.Message = string.Format("<b>{0}<b> uploaded .</br>", img_file.FileName.ToString());
+                    instructor.InstrucrorImage = img_file.FileName;
+
+                }
+
+            }
+            else
+            {
+                instructor.InstrucrorImage = "DefaultInstructor.png";
+            }
+
+            try
+            {
                 _context.Add(instructor);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                _context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                ViewBag.exc = ex.Message;
+            }
             ViewData["DepartmentID"] = new SelectList(_context.departments, "DepartmentID", "DepartmentName", instructor.DepartmentID);
             return View(instructor);
         }
@@ -89,14 +121,36 @@ namespace SWDteam.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("InstructorId,InstructorName,InstrucrorImage,InstructorEmail,Instructorbiography,Instructorexperience,InstructorRate,DepartmentID")] Instructor instructor)
+        public async Task<IActionResult> Edit(int id, [Bind("InstructorId,InstructorName,InstructorEmail,Instructorbiography,Instructorexperience,DepartmentID")] Instructor instructor, IFormFile img_file)
         {
             if (id != instructor.InstructorId)
             {
                 return NotFound();
             }
+            string path = Path.Combine(_environment.WebRootPath, "Img");
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
 
-            if (ModelState.IsValid)
+            if (img_file != null)
+            {
+                path = Path.Combine(path, img_file.FileName);
+                using (var stream = new FileStream(path, FileMode.Create))
+                {
+                    await img_file.CopyToAsync(stream);
+                    ViewBag.Message = string.Format("<b>{0}<b> uploaded .</br>", img_file.FileName.ToString());
+                    instructor.InstrucrorImage = img_file.FileName;
+
+                }
+
+            }
+            else
+            {
+                instructor.InstrucrorImage = "DefaultInstructor.png";
+            }
+
+            if (instructor.InstructorName != null && instructor.InstrucrorImage != null && instructor.InstructorEmail != null && instructor.Instructorbiography != null && instructor.Instructorexperience != null)
             {
                 try
                 {
@@ -114,7 +168,7 @@ namespace SWDteam.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index");
             }
             ViewData["DepartmentID"] = new SelectList(_context.departments, "DepartmentID", "DepartmentName", instructor.DepartmentID);
             return View(instructor);
@@ -153,14 +207,14 @@ namespace SWDteam.Controllers
             {
                 _context.instructors.Remove(instructor);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool InstructorExists(int id)
         {
-          return (_context.instructors?.Any(e => e.InstructorId == id)).GetValueOrDefault();
+            return (_context.instructors?.Any(e => e.InstructorId == id)).GetValueOrDefault();
         }
     }
 }

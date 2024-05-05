@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
 using SWDteam.Data;
 using SWDteam.Models;
 
@@ -13,10 +14,12 @@ namespace SWDteam.Controllers
     public class CoursesController : Controller
     {
         private readonly AppDbContext _context;
+        private readonly IWebHostEnvironment _environment;
 
-        public CoursesController(AppDbContext context)
+        public CoursesController(AppDbContext context, IWebHostEnvironment environment)
         {
             _context = context;
+            _environment = environment;
         }
 
         // GET: Courses
@@ -50,7 +53,7 @@ namespace SWDteam.Controllers
         public IActionResult Create()
         {
             ViewData["DepartmentID"] = new SelectList(_context.departments, "DepartmentID", "DepartmentName");
-            ViewData["InstructorID"] = new SelectList(_context.instructors, "InstructorId", "InstructorEmail");
+            ViewData["InstructorID"] = new SelectList(_context.instructors, "InstructorId", "InstructorName");
             return View();
         }
 
@@ -59,16 +62,60 @@ namespace SWDteam.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CourseId,CourseName,CourseDescription,CourseImage,CourseVedio,InstructorName,CourseDuration,CoursePrice,CoursePurchases,CourseRate,Coursedate,DepartmentID,InstructorID")] Course course)
+        public async Task<IActionResult> Create([Bind("CourseId,CourseName,CourseDescription,CourseDuration,CoursePrice,Coursedate,DepartmentID,InstructorID")] Course course, IFormFile img_file, IFormFile vedio_file)
         {
-            //if (ModelState.IsValid)
-            //{
+            string path = Path.Combine(_environment.WebRootPath, "Img");
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
+
+            if (img_file != null)
+            {
+                path = Path.Combine(path, img_file.FileName);
+                using (var stream = new FileStream(path, FileMode.Create))
+                {
+                    await img_file.CopyToAsync(stream);
+                    //ViewBag.Message = string.Format("<b>{0}<b> uploaded .</br>",img_file.FileName.ToString());
+                    course.CourseImage = img_file.FileName;
+                }
+
+            }
+            else
+            {
+                course.CourseImage = "DefaultCourse.png";
+            }
+
+            string pathVedio = Path.Combine(_environment.WebRootPath, "Vedio");
+            if (!Directory.Exists(pathVedio))
+            {
+                Directory.CreateDirectory(pathVedio);
+            }
+
+            if (vedio_file != null)
+            {
+                pathVedio = Path.Combine(pathVedio, vedio_file.FileName);
+                using (var stream = new FileStream(pathVedio, FileMode.Create))
+                {
+                    await vedio_file.CopyToAsync(stream);
+                    //ViewBag.Message = string.Format("<b>{0}<b> uploaded .</br>",img_file.FileName.ToString());
+                    course.CourseVedio = vedio_file.FileName;
+                }
+
+            }
+
+            try
+            {
                 _context.Add(course);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-          //  }
+                _context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                ViewBag.exc = ex.Message;
+            }
             ViewData["DepartmentID"] = new SelectList(_context.departments, "DepartmentID", "DepartmentName", course.DepartmentID);
-            ViewData["InstructorID"] = new SelectList(_context.instructors, "InstructorId", "InstructorEmail", course.InstructorID);
+            ViewData["InstructorID"] = new SelectList(_context.instructors, "InstructorId", "InstructorName", course.InstructorID);
             return View(course);
         }
 
@@ -86,7 +133,7 @@ namespace SWDteam.Controllers
                 return NotFound();
             }
             ViewData["DepartmentID"] = new SelectList(_context.departments, "DepartmentID", "DepartmentName", course.DepartmentID);
-            ViewData["InstructorID"] = new SelectList(_context.instructors, "InstructorId", "InstructorEmail", course.InstructorID);
+            ViewData["InstructorID"] = new SelectList(_context.instructors, "InstructorId", "InstructorName", course.InstructorID);
             return View(course);
         }
 
@@ -95,7 +142,7 @@ namespace SWDteam.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("CourseId,CourseName,CourseDescription,CourseImage,CourseVedio,InstructorName,CourseDuration,CoursePrice,CoursePurchases,CourseRate,Coursedate,DepartmentID,InstructorID")] Course course)
+        public async Task<IActionResult> Edit(int id, [Bind("CourseId,CourseName,CourseDescription,CourseImage,CourseVedio,CourseDuration,CoursePrice,Coursedate,DepartmentID,InstructorID")] Course course)
         {
             if (id != course.CourseId)
             {
@@ -123,7 +170,7 @@ namespace SWDteam.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["DepartmentID"] = new SelectList(_context.departments, "DepartmentID", "DepartmentName", course.DepartmentID);
-            ViewData["InstructorID"] = new SelectList(_context.instructors, "InstructorId", "InstructorEmail", course.InstructorID);
+            ViewData["InstructorID"] = new SelectList(_context.instructors, "InstructorId", "InstructorName", course.InstructorID);
             return View(course);
         }
 
@@ -161,14 +208,14 @@ namespace SWDteam.Controllers
             {
                 _context.courses.Remove(course);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool CourseExists(int id)
         {
-          return (_context.courses?.Any(e => e.CourseId == id)).GetValueOrDefault();
+            return (_context.courses?.Any(e => e.CourseId == id)).GetValueOrDefault();
         }
     }
 }

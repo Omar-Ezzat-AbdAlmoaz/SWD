@@ -144,7 +144,7 @@ namespace SWDteam.Controllers
                 category.CategoryImage = "DefaultCategory.png";
             }
 
-            if (ModelState.IsValid)
+            if (category.CategoryName != null && category.CategoryDescription != null && category.CategoryImage != null)
             {
                 try
                 {

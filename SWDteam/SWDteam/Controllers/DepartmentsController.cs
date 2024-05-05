@@ -37,6 +37,9 @@ namespace SWDteam.Controllers
             var department = await _context.departments
                 .Include(d => d.Category)
                 .FirstOrDefaultAsync(m => m.DepartmentID == id);
+            List<Course> Courses = _context.courses.Where(m => m.CourseId == id).ToList();
+            List<Instructor> instructors = _context.instructors.Where(m => m.InstructorId == id).ToList();
+
             if (department == null)
             {
                 return NotFound();
@@ -48,7 +51,7 @@ namespace SWDteam.Controllers
         // GET: Departments/Create
         public IActionResult Create()
         {
-            ViewData["CategoryId"] = new SelectList(_context.categories, "CategoryId", "CategoryDescription");
+            ViewData["CategoryId"] = new SelectList(_context.categories, "CategoryId", "CategoryName");
             return View();
         }
 
@@ -57,14 +60,14 @@ namespace SWDteam.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("DepartmentID,DepartmentName,CategoryId")] Department department)
+        public async Task<IActionResult> Create([Bind("DepartmentID,DepartmentName,DepartmentDescription,CategoryId")] Department department)
         {
-          
-                _context.Add(department);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
 
-            ViewData["CategoryId"] = new SelectList(_context.categories, "CategoryId", "CategoryDescription", department.CategoryId);
+            _context.Add(department);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+
+            ViewData["CategoryId"] = new SelectList(_context.categories, "CategoryId", "CategoryName", department.CategoryId);
             return View(department);
         }
 
@@ -75,13 +78,12 @@ namespace SWDteam.Controllers
             {
                 return NotFound();
             }
-
             var department = await _context.departments.FindAsync(id);
             if (department == null)
             {
                 return NotFound();
             }
-            ViewData["CategoryId"] = new SelectList(_context.categories, "CategoryId", "CategoryDescription", department.CategoryId);
+            ViewData["CategoryId"] = new SelectList(_context.categories, "CategoryId", "CategoryName", department.CategoryId);
             return View(department);
         }
 
@@ -90,14 +92,14 @@ namespace SWDteam.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("DepartmentId,DepartmentName,CategoryId")] Department department)
+        public async Task<IActionResult> Edit(int id, [Bind("DepartmentId,DepartmentName,DepartmentDescription,CategoryId")] Department department)
         {
             if (id != department.DepartmentID)
             {
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (department.DepartmentName != null)
             {
                 try
                 {
@@ -115,9 +117,10 @@ namespace SWDteam.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index", "Departments");
             }
-            ViewData["CategoryId"] = new SelectList(_context.categories, "CategoryId", "CategoryDescription", department.CategoryId);
+
+            ViewData["CategoryId"] = new SelectList(_context.categories, "CategoryId", "CategoryName", department.CategoryId);
             return View(department);
         }
 
@@ -154,14 +157,14 @@ namespace SWDteam.Controllers
             {
                 _context.departments.Remove(department);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool DepartmentExists(int id)
         {
-          return (_context.departments?.Any(e => e.DepartmentID== id)).GetValueOrDefault();
+            return (_context.departments?.Any(e => e.DepartmentID == id)).GetValueOrDefault();
         }
     }
 }

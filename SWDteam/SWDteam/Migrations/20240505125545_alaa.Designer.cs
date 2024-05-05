@@ -12,7 +12,7 @@ using SWDteam.Data;
 namespace SWDteam.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240503061256_alaa")]
+    [Migration("20240505125545_alaa")]
     partial class alaa
     {
         /// <inheritdoc />
@@ -261,7 +261,8 @@ namespace SWDteam.Migrations
 
                     b.Property<string>("password")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.HasKey("Id");
 
@@ -319,12 +320,6 @@ namespace SWDteam.Migrations
                     b.Property<double>("CoursePrice")
                         .HasColumnType("float");
 
-                    b.Property<int>("CoursePurchases")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CourseRate")
-                        .HasColumnType("int");
-
                     b.Property<string>("CourseVedio")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -337,10 +332,6 @@ namespace SWDteam.Migrations
 
                     b.Property<int>("InstructorID")
                         .HasColumnType("int");
-
-                    b.Property<string>("InstructorName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("CourseId");
 
@@ -361,6 +352,10 @@ namespace SWDteam.Migrations
 
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
+
+                    b.Property<string>("DepartmentDescription")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("DepartmentName")
                         .IsRequired()
@@ -395,9 +390,6 @@ namespace SWDteam.Migrations
                     b.Property<string>("InstructorName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("InstructorRate")
-                        .HasColumnType("int");
 
                     b.Property<string>("Instructorbiography")
                         .IsRequired()

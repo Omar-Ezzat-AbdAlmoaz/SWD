@@ -7,11 +7,12 @@
 
 <h1>Edit</h1>
 
-<h4>Instructor</h4>
+<h4>@Model.InstructorName</h4>
+<img src="~/Img/@Model.InstrucrorImage" style="width: 150px;border-radius:30%" alt="Avatar" />
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit">
+        <form asp-action="Edit" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="InstructorId" />
             <div class="form-group">
@@ -21,7 +22,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="InstrucrorImage" class="control-label"></label>
-                <input asp-for="InstrucrorImage" class="form-control" />
+                <input asp-for="InstrucrorImage" class="form-control" type="file" name="img_file" accept="image/*" />
                 <span asp-validation-for="InstrucrorImage" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -31,18 +32,13 @@
             </div>
             <div class="form-group">
                 <label asp-for="Instructorbiography" class="control-label"></label>
-                <input asp-for="Instructorbiography" class="form-control" />
+                <textarea asp-for="Instructorbiography" class="form-control"></textarea>
                 <span asp-validation-for="Instructorbiography" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Instructorexperience" class="control-label"></label>
-                <input asp-for="Instructorexperience" class="form-control" />
+                <textarea asp-for="Instructorexperience" class="form-control"></textarea>
                 <span asp-validation-for="Instructorexperience" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="InstructorRate" class="control-label"></label>
-                <input asp-for="InstructorRate" class="form-control" />
-                <span asp-validation-for="InstructorRate" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DepartmentID" class="control-label"></label>

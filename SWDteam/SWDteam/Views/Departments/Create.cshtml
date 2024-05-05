@@ -19,6 +19,11 @@
                 <span asp-validation-for="DepartmentName" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="DepartmentDescription" class="control-label"></label>
+                <textarea asp-for="DepartmentDescription" class="form-control"></textarea>
+                <span asp-validation-for="DepartmentDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="CategoryId" class="control-label"></label>
                 <select asp-for="CategoryId" class ="form-control" asp-items="ViewBag.CategoryId"></select>
             </div>
