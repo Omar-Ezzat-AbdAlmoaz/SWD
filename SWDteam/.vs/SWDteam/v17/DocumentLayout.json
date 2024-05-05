@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\DOWNLOADS\\SWD\\SWDteam\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BA5D71CB-77E3-4B35-BB1D-E07DB2AD29E1}|SWDteam\\SWDteam.csproj|d:\\downloads\\swd\\swdteam\\swdteam\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BA5D71CB-77E3-4B35-BB1D-E07DB2AD29E1}|SWDteam\\SWDteam.csproj|solutionrelative:swdteam\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BA5D71CB-77E3-4B35-BB1D-E07DB2AD29E1}|SWDteam\\SWDteam.csproj|d:\\downloads\\swd\\swdteam\\swdteam\\models\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BA5D71CB-77E3-4B35-BB1D-E07DB2AD29E1}|SWDteam\\SWDteam.csproj|solutionrelative:swdteam\\models\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -22,11 +26,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\DOWNLOADS\\SWD\\SWDteam\\SWDteam\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "SWDteam\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\DOWNLOADS\\SWD\\SWDteam\\SWDteam\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "SWDteam\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-05T09:08:10.605Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Register.cshtml.cs",
               "DocumentMoniker": "D:\\DOWNLOADS\\SWD\\SWDteam\\SWDteam\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
               "RelativeDocumentMoniker": "SWDteam\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
@@ -34,12 +51,11 @@
               "RelativeToolTip": "SWDteam\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
               "ViewState": "AQIAAFYAAAAAAAAAAAAcwGsAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-05T08:54:24.035Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-05T08:54:24.035Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Login.cshtml.cs",
               "DocumentMoniker": "D:\\DOWNLOADS\\SWD\\SWDteam\\SWDteam\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
               "RelativeDocumentMoniker": "SWDteam\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
@@ -47,18 +63,17 @@
               "RelativeToolTip": "SWDteam\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
               "ViewState": "AQIAADwAAAAAAAAAAAAowEwAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-05T08:53:49.074Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-05T08:53:49.074Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Admin.cs",
               "DocumentMoniker": "D:\\DOWNLOADS\\SWD\\SWDteam\\SWDteam\\Models\\Admin.cs",
               "RelativeDocumentMoniker": "SWDteam\\Models\\Admin.cs",
               "ToolTip": "D:\\DOWNLOADS\\SWD\\SWDteam\\SWDteam\\Models\\Admin.cs",
               "RelativeToolTip": "SWDteam\\Models\\Admin.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAAwBoAAAAAAAAA",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAxwBoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-05T08:53:19.233Z",
               "EditorCaption": ""
