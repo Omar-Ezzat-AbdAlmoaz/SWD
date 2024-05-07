@@ -8,189 +8,189 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SWDteam
 build_property.RootNamespace = SWDteam
-build_property.ProjectDir = D:\POT\software development\SWD\SWDteam\SWDteam\
+build_property.ProjectDir = D:\POT\software development\SWD\SWD\SWDteam\SWDteam\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\POT\software development\SWD\SWDteam\SWDteam
+build_property.MSBuildProjectDirectory = D:\POT\software development\SWD\SWD\SWDteam\SWDteam
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/POT/software development/SWD/SWDteam/SWDteam/Areas/Identity/Pages/Account/ConfirmEmail.cshtml]
+[D:/POT/software development/SWD/SWD/SWDteam/SWDteam/Areas/Identity/Pages/Account/ConfirmEmail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxDb25maXJtRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/POT/software development/SWD/SWDteam/SWDteam/Areas/Identity/Pages/Account/Login.cshtml]
+[D:/POT/software development/SWD/SWD/SWDteam/SWDteam/Areas/Identity/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/POT/software development/SWD/SWDteam/SWDteam/Areas/Identity/Pages/Account/Logout.cshtml]
+[D:/POT/software development/SWD/SWD/SWDteam/SWDteam/Areas/Identity/Pages/Account/Logout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/POT/software development/SWD/SWDteam/SWDteam/Areas/Identity/Pages/Account/Manage/DownloadPersonalData.cshtml]
+[D:/POT/software development/SWD/SWD/SWDteam/SWDteam/Areas/Identity/Pages/Account/Manage/DownloadPersonalData.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRG93bmxvYWRQZXJzb25hbERhdGEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/POT/software development/SWD/SWDteam/SWDteam/Areas/Identity/Pages/Account/Manage/Email.cshtml]
+[D:/POT/software development/SWD/SWD/SWDteam/SWDteam/Areas/Identity/Pages/Account/Manage/Email.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/POT/software development/SWD/SWDteam/SWDteam/Areas/Identity/Pages/Account/Manage/PersonalData.cshtml]
+[D:/POT/software development/SWD/SWD/SWDteam/SWDteam/Areas/Identity/Pages/Account/Manage/PersonalData.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcUGVyc29uYWxEYXRhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/POT/software development/SWD/SWDteam/SWDteam/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
+[D:/POT/software development/SWD/SWD/SWDteam/SWDteam/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX01hbmFnZU5hdi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/POT/software development/SWD/SWDteam/SWDteam/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
+[D:/POT/software development/SWD/SWD/SWDteam/SWDteam/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/POT/software development/SWD/SWDteam/SWDteam/Areas/Identity/Pages/Account/Register.cshtml]
+[D:/POT/software development/SWD/SWD/SWDteam/SWDteam/Areas/Identity/Pages/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/POT/software development/SWD/SWDteam/SWDteam/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+[D:/POT/software development/SWD/SWD/SWDteam/SWDteam/Areas/Identity/Pages/Account/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/POT/software development/SWD/SWDteam/SWDteam/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+[D:/POT/software development/SWD/SWD/SWDteam/SWDteam/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/POT/software development/SWD/SWDteam/SWDteam/Areas/Identity/Pages/_ViewImports.cshtml]
+[D:/POT/software development/SWD/SWD/SWDteam/SWDteam/Areas/Identity/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/POT/software development/SWD/SWDteam/SWDteam/Areas/Identity/Pages/_ViewStart.cshtml]
+[D:/POT/software development/SWD/SWD/SWDteam/SWDteam/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/POT/software development/SWD/SWDteam/SWDteam/Views/Admin/Index2.cshtml]
+[D:/POT/software development/SWD/SWD/SWDteam/SWDteam/Views/Admin/Index2.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXgyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/POT/software development/SWD/SWDteam/SWDteam/Views/Admin/Login2.cshtml]
+[D:/POT/software development/SWD/SWD/SWDteam/SWDteam/Views/Admin/Login2.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTG9naW4yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/POT/software development/SWD/SWDteam/SWDteam/Views/Admin/Register2.cshtml]
+[D:/POT/software development/SWD/SWD/SWDteam/SWDteam/Views/Admin/Register2.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUmVnaXN0ZXIyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/POT/software development/SWD/SWDteam/SWDteam/Views/Categories/Create.cshtml]
+[D:/POT/software development/SWD/SWD/SWDteam/SWDteam/Views/Categories/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/POT/software development/SWD/SWDteam/SWDteam/Views/Categories/Delete.cshtml]
+[D:/POT/software development/SWD/SWD/SWDteam/SWDteam/Views/Categories/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/POT/software development/SWD/SWDteam/SWDteam/Views/Categories/Details.cshtml]
+[D:/POT/software development/SWD/SWD/SWDteam/SWDteam/Views/Categories/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/POT/software development/SWD/SWDteam/SWDteam/Views/Categories/Edit.cshtml]
+[D:/POT/software development/SWD/SWD/SWDteam/SWDteam/Views/Categories/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/POT/software development/SWD/SWDteam/SWDteam/Views/Categories/Index.cshtml]
+[D:/POT/software development/SWD/SWD/SWDteam/SWDteam/Views/Categories/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/POT/software development/SWD/SWDteam/SWDteam/Views/Courses/Create.cshtml]
+[D:/POT/software development/SWD/SWD/SWDteam/SWDteam/Views/Courses/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/POT/software development/SWD/SWDteam/SWDteam/Views/Courses/Delete.cshtml]
+[D:/POT/software development/SWD/SWD/SWDteam/SWDteam/Views/Courses/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/POT/software development/SWD/SWDteam/SWDteam/Views/Courses/Details.cshtml]
+[D:/POT/software development/SWD/SWD/SWDteam/SWDteam/Views/Courses/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/POT/software development/SWD/SWDteam/SWDteam/Views/Courses/Edit.cshtml]
+[D:/POT/software development/SWD/SWD/SWDteam/SWDteam/Views/Courses/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/POT/software development/SWD/SWDteam/SWDteam/Views/Courses/Index.cshtml]
+[D:/POT/software development/SWD/SWD/SWDteam/SWDteam/Views/Courses/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/POT/software development/SWD/SWDteam/SWDteam/Views/Departments/Create.cshtml]
+[D:/POT/software development/SWD/SWD/SWDteam/SWDteam/Views/Departments/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/POT/software development/SWD/SWDteam/SWDteam/Views/Departments/Delete.cshtml]
+[D:/POT/software development/SWD/SWD/SWDteam/SWDteam/Views/Departments/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/POT/software development/SWD/SWDteam/SWDteam/Views/Departments/Details.cshtml]
+[D:/POT/software development/SWD/SWD/SWDteam/SWDteam/Views/Departments/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/POT/software development/SWD/SWDteam/SWDteam/Views/Departments/Edit.cshtml]
+[D:/POT/software development/SWD/SWD/SWDteam/SWDteam/Views/Departments/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/POT/software development/SWD/SWDteam/SWDteam/Views/Departments/Index.cshtml]
+[D:/POT/software development/SWD/SWD/SWDteam/SWDteam/Views/Departments/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/POT/software development/SWD/SWDteam/SWDteam/Views/Home/Index.cshtml]
+[D:/POT/software development/SWD/SWD/SWDteam/SWDteam/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/POT/software development/SWD/SWDteam/SWDteam/Views/Home/Privacy.cshtml]
+[D:/POT/software development/SWD/SWD/SWDteam/SWDteam/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/POT/software development/SWD/SWDteam/SWDteam/Views/Instructors/Create.cshtml]
+[D:/POT/software development/SWD/SWD/SWDteam/SWDteam/Views/Instructors/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvcnNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/POT/software development/SWD/SWDteam/SWDteam/Views/Instructors/Delete.cshtml]
+[D:/POT/software development/SWD/SWD/SWDteam/SWDteam/Views/Instructors/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvcnNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/POT/software development/SWD/SWDteam/SWDteam/Views/Instructors/Details.cshtml]
+[D:/POT/software development/SWD/SWD/SWDteam/SWDteam/Views/Instructors/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvcnNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/POT/software development/SWD/SWDteam/SWDteam/Views/Instructors/Edit.cshtml]
+[D:/POT/software development/SWD/SWD/SWDteam/SWDteam/Views/Instructors/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvcnNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/POT/software development/SWD/SWDteam/SWDteam/Views/Instructors/Index.cshtml]
+[D:/POT/software development/SWD/SWD/SWDteam/SWDteam/Views/Instructors/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvcnNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/POT/software development/SWD/SWDteam/SWDteam/Views/Shared/Error.cshtml]
+[D:/POT/software development/SWD/SWD/SWDteam/SWDteam/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/POT/software development/SWD/SWDteam/SWDteam/Views/Shared/_LoginPartial.cshtml]
+[D:/POT/software development/SWD/SWD/SWDteam/SWDteam/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/POT/software development/SWD/SWDteam/SWDteam/Views/Shared/_LoginPartial2.cshtml]
+[D:/POT/software development/SWD/SWD/SWDteam/SWDteam/Views/Shared/_LoginPartial2.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/POT/software development/SWD/SWDteam/SWDteam/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/POT/software development/SWD/SWD/SWDteam/SWDteam/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/POT/software development/SWD/SWDteam/SWDteam/Views/_ViewImports.cshtml]
+[D:/POT/software development/SWD/SWD/SWDteam/SWDteam/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/POT/software development/SWD/SWDteam/SWDteam/Views/_ViewStart.cshtml]
+[D:/POT/software development/SWD/SWD/SWDteam/SWDteam/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/POT/software development/SWD/SWDteam/SWDteam/Views/Shared/_Layout.cshtml]
+[D:/POT/software development/SWD/SWD/SWDteam/SWDteam/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-zvy643uimx

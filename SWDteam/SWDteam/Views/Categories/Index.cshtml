@@ -10,41 +10,21 @@
 <p>
     <a asp-action="Create" class="btn btn-primary"><i class="bi-plus-square"></i>&nbsp; Create New</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.CategoryName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CategoryDescription)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CategoryImage)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
+@if(Model != null){
+    <div style="display:ruby;flex-wrap:wrap;margin: 0 -1.6rem -3.2rem 0;">
         @foreach (var item in Model) {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.CategoryName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.CategoryDescription)
-                    </td>
-                    <td>
-                        <a asp-action="Details" asp-route-id="@item.CategoryId">
-                            <img src="~/Img/@item.CategoryImage" alt="dept_image_here" style="border-radius:30%;width:70px; height:70px">
-                        </a>
-                    </td>
-                    <td>
-                            <a asp-action="Edit" asp-route-id="@item.CategoryId"><i class="bi bi-pencil-square"></i></a> |
-                            <a asp-action="Details" asp-route-id="@item.CategoryId"><i class="bi bi-eye"></i></a> |
-                            <a asp-action="Delete" asp-route-id="@item.CategoryId"><i class="bi bi-trash3-fill"></i></a>
-                    </td>
-                </tr>
+           
+            <div style="display:block; margin: 0 1.6rem 1.6rem 0;">
+                <a asp-action="Details" asp-route-id="@item.CategoryId">
+                    <img src="~/Img/@item.CategoryImage" alt="dept_image_here" style="border-radius:20%;width:200px; height:200px">
+                </a>
+                <span>
+                    <p>@item.CategoryName</p>
+                    <a asp-action="Edit" asp-route-id="@item.CategoryId"><i class="bi bi-pencil-square"></i></a> |
+                    <a asp-action="Details" asp-route-id="@item.CategoryId"><i class="bi bi-eye"></i></a> |
+                    <a asp-action="Delete" asp-route-id="@item.CategoryId"><i class="bi bi-trash3-fill"></i></a>
+                </span>
+            </div>
         }
-    </tbody>
-</table>
+    </div>
+}

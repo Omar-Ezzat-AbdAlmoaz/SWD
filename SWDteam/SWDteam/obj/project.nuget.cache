@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YJ1NjHT7NEmVOsnluI7PadodUbH8UjYA53Kj4AFkWrrz2ywfPZtc+xw1+v7CPhm1FGIYBbSjp8icSlS4EectfQ==",
+  "dgSpecHash": "HH2x1COV+B/X2OwvOG1oUe7HfsHIEX/LJgKwfZXeaaf2O0uNFzflqiF9y7o6Y7CJLWMHsygeTyVjaIOfd9+0Zg==",
   "success": true,
-  "projectFilePath": "D:\\POT\\software development\\SWD\\SWDteam\\SWDteam\\SWDteam.csproj",
+  "projectFilePath": "D:\\POT\\software development\\SWD\\SWD\\SWDteam\\SWDteam\\SWDteam.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\E5570\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\E5570\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

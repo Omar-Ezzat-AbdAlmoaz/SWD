@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\POT\\software development\\SWD\\SWDteam\\SWDteam\\SWDteam.csproj": {}
+    "D:\\POT\\software development\\SWD\\SWD\\SWDteam\\SWDteam\\SWDteam.csproj": {}
   },
   "projects": {
-    "D:\\POT\\software development\\SWD\\SWDteam\\SWDteam\\SWDteam.csproj": {
+    "D:\\POT\\software development\\SWD\\SWD\\SWDteam\\SWDteam\\SWDteam.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\POT\\software development\\SWD\\SWDteam\\SWDteam\\SWDteam.csproj",
+        "projectUniqueName": "D:\\POT\\software development\\SWD\\SWD\\SWDteam\\SWDteam\\SWDteam.csproj",
         "projectName": "SWDteam",
-        "projectPath": "D:\\POT\\software development\\SWD\\SWDteam\\SWDteam\\SWDteam.csproj",
+        "projectPath": "D:\\POT\\software development\\SWD\\SWD\\SWDteam\\SWDteam\\SWDteam.csproj",
         "packagesPath": "C:\\Users\\E5570\\.nuget\\packages\\",
-        "outputPath": "D:\\POT\\software development\\SWD\\SWDteam\\SWDteam\\obj\\",
+        "outputPath": "D:\\POT\\software development\\SWD\\SWD\\SWDteam\\SWDteam\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\E5570\\AppData\\Roaming\\NuGet\\NuGet.Config",

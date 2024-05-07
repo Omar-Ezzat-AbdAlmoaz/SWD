@@ -61,43 +61,74 @@ namespace SWDteam.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("InstructorName,InstructorEmail,Instructorbiography,Instructorexperience,DepartmentID")] Instructor instructor, IFormFile img_file)
         {
-
-            string path = Path.Combine(_environment.WebRootPath, "Img");
-            if (!Directory.Exists(path))
+            List<Instructor> instructors = _context.instructors.ToList();
+            string s = instructor.InstructorName;
+            int z = instructor.DepartmentID;
+            int x = 0, m = 0;
+            foreach (var i in instructors)
             {
-                Directory.CreateDirectory(path);
-            }
-
-            if (img_file != null)
-            {
-                path = Path.Combine(path, img_file.FileName);
-                using (var stream = new FileStream(path, FileMode.Create))
+                if (i.InstructorName == s)
                 {
-                    await img_file.CopyToAsync(stream);
-                    ViewBag.Message = string.Format("<b>{0}<b> uploaded .</br>", img_file.FileName.ToString());
-                    instructor.InstrucrorImage = img_file.FileName;
-
+                    x++;
+                }
+            }
+            if (x != 0)
+            {
+                foreach (var ii in instructors)
+                {
+                    if (ii.DepartmentID == z)
+                    {
+                        m++;
+                    }
+                }
+            }
+            if (m == 0)
+            {
+                string path = Path.Combine(_environment.WebRootPath, "Img");
+                if (!Directory.Exists(path))
+                {
+                    Directory.CreateDirectory(path);
                 }
 
+                if (img_file != null)
+                {
+                    path = Path.Combine(path, img_file.FileName);
+                    using (var stream = new FileStream(path, FileMode.Create))
+                    {
+                        await img_file.CopyToAsync(stream);
+                        ViewBag.Message = string.Format("<b>{0}<b> uploaded .</br>", img_file.FileName.ToString());
+                        instructor.InstrucrorImage = img_file.FileName;
+
+                    }
+
+                }
+                else
+                {
+                    instructor.InstrucrorImage = "DefaultInstructor.png";
+                }
+
+                try
+                {
+                    _context.Add(instructor);
+                    _context.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                catch (Exception ex)
+                {
+                    ViewBag.exc = ex.Message;
+                }
+                ViewData["DepartmentID"] = new SelectList(_context.departments, "DepartmentID", "DepartmentName", instructor.DepartmentID);
+                return View(instructor);
             }
             else
             {
-                instructor.InstrucrorImage = "DefaultInstructor.png";
-            }
+                ModelState.AddModelError("", "Instructor with the same name already exists.");
 
-            try
-            {
-                _context.Add(instructor);
-                _context.SaveChanges();
-                return RedirectToAction("Index");
+                ViewData["DepartmentID"] = new SelectList(_context.departments, "DepartmentID", "DepartmentName", instructor.DepartmentID);
+                return View(instructor);
             }
-            catch (Exception ex)
-            {
-                ViewBag.exc = ex.Message;
-            }
-            ViewData["DepartmentID"] = new SelectList(_context.departments, "DepartmentID", "DepartmentName", instructor.DepartmentID);
-            return View(instructor);
         }
+
 
         // GET: Instructors/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -205,6 +236,14 @@ namespace SWDteam.Controllers
             var instructor = await _context.instructors.FindAsync(id);
             if (instructor != null)
             {
+                List<Course> courses = _context.courses.Where(m => m.InstructorID == id).ToList();
+                if (courses != null)
+                {
+                    foreach (var course in courses)
+                    {
+                        _context.courses.Remove(course);
+                    }
+                }
                 _context.instructors.Remove(instructor);
             }
 

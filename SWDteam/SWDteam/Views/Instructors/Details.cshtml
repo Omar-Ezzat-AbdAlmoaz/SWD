@@ -48,6 +48,11 @@
                     @foreach (var item in Model.Courses)
                     {
                         <tr>
+                            <td>
+                                <img src="~/Img/@item.CourseImage" style="border-radius:20%;width:70px; height:70px" alt="Avatar">
+                            </td>
+                        </tr>
+                        <tr>
                             <td> @Html.DisplayFor(modelItem => item.CourseName)</td>
                         </tr>
                     }

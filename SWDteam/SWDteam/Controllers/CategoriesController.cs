@@ -42,7 +42,7 @@ namespace SWDteam.Controllers
                 .FirstOrDefaultAsync(m => m.CategoryId == id);
 
             List<Department> departments = _context.departments.Where(m => m.DepartmentID == id).ToList();
-
+            List<Course> Courses = _context.courses.ToList();
             if (category == null)
             {
                 return NotFound();
@@ -54,7 +54,14 @@ namespace SWDteam.Controllers
         // GET: Categories/Create
         public IActionResult Create()
         {
-            return View();
+            var Name = HttpContext.Session.GetString("Name");
+
+            if (string.IsNullOrEmpty(Name))
+            {
+                return RedirectToAction("Login2", "Admin");
+            }
+            else
+                return View();
         }
 
         // POST: Categories/Create
@@ -64,42 +71,49 @@ namespace SWDteam.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("CategoryName,CategoryDescription")] Category category, IFormFile img_file)
         {
-            string path = Path.Combine(_environment.WebRootPath, "Img");
-            if (!Directory.Exists(path))
+            var Name = HttpContext.Session.GetString("Name");
+            if (string.IsNullOrEmpty(Name))
             {
-                Directory.CreateDirectory(path);
-            }
-
-            if (img_file != null)
-            {
-                path = Path.Combine(path, img_file.FileName);
-                using (var stream = new FileStream(path, FileMode.Create))
-                {
-                    await img_file.CopyToAsync(stream);
-                    //ViewBag.Message = string.Format("<b>{0}<b> uploaded .</br>",img_file.FileName.ToString());
-                    category.CategoryImage = img_file.FileName;
-
-                }
-
+                return RedirectToAction("Index", "Acount");
             }
             else
             {
-                category.CategoryImage = "DefaultCategory.png";
-            }
+                string path = Path.Combine(_environment.WebRootPath, "Img");
+                if (!Directory.Exists(path))
+                {
+                    Directory.CreateDirectory(path);
+                }
 
-            try
-            {
-                _context.Add(category);
-                _context.SaveChanges();
-                return RedirectToAction("Index");
+                if (img_file != null)
+                {
+                    path = Path.Combine(path, img_file.FileName);
+                    using (var stream = new FileStream(path, FileMode.Create))
+                    {
+                        await img_file.CopyToAsync(stream);
+                        //ViewBag.Message = string.Format("<b>{0}<b> uploaded .</br>",img_file.FileName.ToString());
+                        category.CategoryImage = img_file.FileName;
+
+                    }
+
+                }
+                else
+                {
+                    category.CategoryImage = "DefaultCategory.png";
+                }
+
+                try
+                {
+                    _context.Add(category);
+                    _context.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                catch (Exception ex)
+                {
+                    ViewBag.exc = ex.Message;
+                }
+                return View();
             }
-            catch (Exception ex)
-            {
-                ViewBag.exc = ex.Message;
-            }
-            return View();
         }
-
         // GET: Categories/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -198,6 +212,27 @@ namespace SWDteam.Controllers
             var category = await _context.categories.FindAsync(id);
             if (category != null)
             {
+                List<Department> departments = _context.departments.Where(m => m.CategoryId == id).ToList();
+                foreach (var department in departments)
+                {
+                    List<Course> courses = _context.courses.Where(m => m.DepartmentID == department.DepartmentID).ToList();
+                    List<Instructor> instructors = _context.instructors.Where(m => m.DepartmentID == department.DepartmentID).ToList();
+                    if (courses != null)
+                    {
+                        foreach (var course in courses)
+                        {
+                            _context.courses.Remove(course);
+                        }
+                    }
+                    if (instructors != null)
+                    {
+                        foreach (var instructor in instructors)
+                        {
+                            _context.instructors.Remove(instructor);
+                        }
+                    }
+                    _context.departments.Remove(department);
+                }
                 _context.categories.Remove(category);
             }
 
@@ -209,5 +244,7 @@ namespace SWDteam.Controllers
         {
             return (_context.categories?.Any(e => e.CategoryId == id)).GetValueOrDefault();
         }
+
+
     }
 }

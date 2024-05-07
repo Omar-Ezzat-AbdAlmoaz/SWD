@@ -99,7 +99,7 @@ namespace SWDteam.Controllers
                 return NotFound();
             }
 
-            if (department.DepartmentName != null)
+            if (department.DepartmentName != null && department.DepartmentDescription!= null)
             {
                 try
                 {
@@ -117,7 +117,7 @@ namespace SWDteam.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction("Index", "Departments");
+                return RedirectToAction(nameof(Index));
             }
 
             ViewData["CategoryId"] = new SelectList(_context.categories, "CategoryId", "CategoryName", department.CategoryId);
@@ -155,6 +155,21 @@ namespace SWDteam.Controllers
             var department = await _context.departments.FindAsync(id);
             if (department != null)
             {
+                List<Course> courses = _context.courses.Where(m => m.DepartmentID == id).ToList();
+                List<Instructor> instructors = _context.instructors.Where(m => m.DepartmentID == id).ToList();
+                if (courses != null)
+                {
+                    foreach (var course in courses)
+                    {
+                        _context.courses.Remove(course);
+                    }
+                }
+                if (instructors != null) { 
+                    foreach (var instructor in instructors)
+                    {
+                        _context.instructors.Remove(instructor);
+                    }
+                }
                 _context.departments.Remove(department);
             }
 
@@ -166,5 +181,6 @@ namespace SWDteam.Controllers
         {
             return (_context.departments?.Any(e => e.DepartmentID == id)).GetValueOrDefault();
         }
+
     }
 }

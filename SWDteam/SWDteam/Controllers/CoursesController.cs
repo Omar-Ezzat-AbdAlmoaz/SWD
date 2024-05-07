@@ -180,7 +180,7 @@ namespace SWDteam.Controllers
                 }
 
             }
-            if (ModelState.IsValid)
+            if (course.CourseName != null && course.CourseDescription != null  && course.CourseImage != null && course.CourseVedio != null)
             {
                 try
                 {
