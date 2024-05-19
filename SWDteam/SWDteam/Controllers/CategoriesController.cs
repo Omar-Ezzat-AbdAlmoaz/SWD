@@ -8,9 +8,11 @@ using Microsoft.EntityFrameworkCore;
 using SWDteam.Data;
 using SWDteam.Models;
 using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Authorization;
 
 namespace SWDteam.Controllers
 {
+    [Authorize]
     public class CategoriesController : Controller
     {
         private readonly AppDbContext _context;

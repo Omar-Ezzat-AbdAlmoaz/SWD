@@ -1,7 +1,6 @@
 ﻿<!DOCTYPE html>
 @using Microsoft.AspNetCore.Identity
 
-
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
 
@@ -26,24 +25,13 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Categories" asp-action="Index">Categories</a>
-                        </li>
+                        @if(SignInManager.IsSignedIn(User)){                       
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Categories" asp-action="Index">Categories</a>
+                            </li>                    
+                        }
                     </ul>
-                    @if (string.IsNullOrEmpty((string)TempData["AdminName"]))
-                    {
-                    <partial name="_LoginPartial" />
-                        
-                    }
-                    @if (!SignInManager.IsSignedIn(User))
-                    {
-                    <partial name="_LoginPartial2" />
-                        
-                    }
-
-                   
-
-
+                    <partial name="_LoginPartial" />                   
                 </div>
             </div>
         </nav>

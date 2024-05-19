@@ -23,7 +23,7 @@
             @foreach (var course in Model.Courses)
             {
                 <div style="display:block; margin: 0 1.6rem 1.6rem 0;">
-                    <a asp-controller="Courses" asp-action="Details" asp-route-id="@course.CourseImage">
+                    <a asp-controller="Courses" asp-action="Details" asp-route-id="@course.CourseId">
                         <img src="~/Img/@course.CourseImage" alt="dept_image_here" style="border-radius:20%;width:200px; height:200px">
                     </a>
                     <span><p>@course.CourseName</p></span>
@@ -33,12 +33,12 @@
     }
     if (Model.Instructors != null)
     {
-        <h2>Top Courses</h2>
+        <h2>Top Instructors</h2>
         <div style="display:ruby;flex-wrap:wrap;margin: 0 -1.6rem -3.2rem 0;">
             @foreach (var instructor in Model.Instructors)
             {
                 <div style="display:block; margin: 0 1.6rem 1.6rem 0;">
-                    <a asp-controller="Instructors" asp-action="Details" asp-route-id="@instructor.InstrucrorImage">
+                    <a asp-controller="Instructors" asp-action="Details" asp-route-id="@instructor.InstructorId">
                         <img src="~/Img/@instructor.InstrucrorImage" alt="dept_image_here" style="border-radius:20%;width:200px; height:200px">
                     </a>
                     <span><p>@instructor.InstructorName</p></span>

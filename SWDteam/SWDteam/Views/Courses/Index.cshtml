@@ -10,75 +10,20 @@
 <p>
     <a asp-action="Create" class="btn btn-primary"><i class="bi-plus-square"></i>&nbsp; Create New</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.CourseName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CourseDescription)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CourseImage)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CourseVedio)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CourseDuration)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CoursePrice)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Coursedate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Department)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Instructor)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CourseName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CourseDescription)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CourseImage)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CourseVedio)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CourseDuration)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CoursePrice)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Coursedate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Department.DepartmentName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Instructor.InstructorName)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.CourseId"><i class="bi bi-pencil-square"></i></a> |
-                <a asp-action="Details" asp-route-id="@item.CourseId"><i class="bi bi-eye"></i></a> |
-                <a asp-action="Delete" asp-route-id="@item.CourseId"><i class="bi bi-trash3-fill"></i></a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div>
+    @if (Model != null)
+    {
+    <h2>Top Courses</h2>
+    <div style="display:ruby;flex-wrap:wrap;margin: 0 -1.6rem -3.2rem 0;">
+        @foreach (var course in Model)
+        {
+            <div style="display:block; margin: 0 1.6rem 1.6rem 0;">
+                <a asp-controller="Courses" asp-action="Details" asp-route-id="@course.CourseId">
+                    <img src="~/Img/@course.CourseImage" alt="dept_image_here" style="border-radius:20%;width:200px; height:200px">
+                </a>
+                <span><p>@course.CourseName</p></span>
+            </div>
+        }
+    </div>
+    }
+</div>

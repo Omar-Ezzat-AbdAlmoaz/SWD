@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +11,7 @@ using SWDteam.Models;
 
 namespace SWDteam.Controllers
 {
+    [Authorize]
     public class InstructorsController : Controller
     {
         private readonly AppDbContext _context;
@@ -38,7 +40,7 @@ namespace SWDteam.Controllers
             var instructor = await _context.instructors
                 .Include(i => i.Department)
                 .FirstOrDefaultAsync(m => m.InstructorId == id);
-            List<Course> courses = _context.courses.Where(m => m.CourseId == id).ToList();
+            List<Course> courses = _context.courses.Where(m => m.InstructorID == id).ToList();
             if (instructor == null)
             {
                 return NotFound();

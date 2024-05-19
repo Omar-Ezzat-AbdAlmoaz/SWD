@@ -39,31 +39,25 @@
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Courses)
         </dt>
-
-        <dd class="col-sm-10">
-            <table class="table table-bordered">
-                @if (Model.Courses != null)
-                {
-                    <tr><th>Courses</th></tr>
-                    @foreach (var item in Model.Courses)
-                    {
-                        <tr>
-                            <td>
-                                <img src="~/Img/@item.CourseImage" style="border-radius:20%;width:70px; height:70px" alt="Avatar">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td> @Html.DisplayFor(modelItem => item.CourseName)</td>
-                        </tr>
-                    }
-                }else{
-                    <tr>
-                        <td>Not Found</td>
-                    </tr>
-                }
-            </table>
-        </dd>
+        
     </dl>
+</div>
+<div>
+    @if (Model.Courses != null)
+    {
+        <h2>Top Courses</h2>
+        <div style="display:ruby;flex-wrap:wrap;margin: 0 -1.6rem -3.2rem 0;">
+            @foreach (var course in Model.Courses)
+            {
+                <div style="display:block; margin: 0 1.6rem 1.6rem 0;">
+                    <a asp-controller="Courses" asp-action="Details" asp-route-id="@course.CourseId">
+                        <img src="~/Img/@course.CourseImage" alt="dept_image_here" style="border-radius:20%;width:200px; height:200px">
+                    </a>
+                    <span><p>@course.CourseName</p></span>
+                </div>
+            }
+        </div>
+    }
 </div>
 <div>
     <a class="btn btn-primary" asp-action="Edit" asp-route-id="@Model?.InstructorId">Edit</a> |

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "IJ0+2ktmiXYFbcMRag1pQbdMHun2xj42QgnqxEhKxqg=",
+  "Hash": "7mF7dHTVNuJRiDos2wWfDsUXOYsFtJo1lgfcTVHYOUY=",
   "Source": "SWDteam",
   "BasePath": "_content/SWDteam",
   "Mode": "Default",
@@ -1037,10 +1037,10 @@
       "OriginalItemSpec": "C:\\Users\\E5570\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.29\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "D:\\POT\\software development\\SWD\\SWD\\SWDteam\\SWDteam\\obj\\Debug\\net6.0\\scopedcss\\bundle\\SWDteam.styles.css",
+      "Identity": "D:\\POT\\software development\\SWD\\SWD\\SWDteam\\SWDteam\\obj\\x64\\Debug\\net6.0\\scopedcss\\bundle\\SWDteam.styles.css",
       "SourceId": "SWDteam",
       "SourceType": "Computed",
-      "ContentRoot": "D:\\POT\\software development\\SWD\\SWD\\SWDteam\\SWDteam\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
+      "ContentRoot": "D:\\POT\\software development\\SWD\\SWD\\SWDteam\\SWDteam\\obj\\x64\\Debug\\net6.0\\scopedcss\\bundle\\",
       "BasePath": "_content/SWDteam",
       "RelativePath": "SWDteam.styles.css",
       "AssetKind": "All",
@@ -1051,13 +1051,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\POT\\software development\\SWD\\SWD\\SWDteam\\SWDteam\\obj\\Debug\\net6.0\\scopedcss\\bundle\\SWDteam.styles.css"
+      "OriginalItemSpec": "D:\\POT\\software development\\SWD\\SWD\\SWDteam\\SWDteam\\obj\\x64\\Debug\\net6.0\\scopedcss\\bundle\\SWDteam.styles.css"
     },
     {
-      "Identity": "D:\\POT\\software development\\SWD\\SWD\\SWDteam\\SWDteam\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\SWDteam.bundle.scp.css",
+      "Identity": "D:\\POT\\software development\\SWD\\SWD\\SWDteam\\SWDteam\\obj\\x64\\Debug\\net6.0\\scopedcss\\projectbundle\\SWDteam.bundle.scp.css",
       "SourceId": "SWDteam",
       "SourceType": "Computed",
-      "ContentRoot": "D:\\POT\\software development\\SWD\\SWD\\SWDteam\\SWDteam\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "D:\\POT\\software development\\SWD\\SWD\\SWDteam\\SWDteam\\obj\\x64\\Debug\\net6.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/SWDteam",
       "RelativePath": "SWDteam.bundle.scp.css",
       "AssetKind": "All",
@@ -1068,7 +1068,7 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\POT\\software development\\SWD\\SWD\\SWDteam\\SWDteam\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\SWDteam.bundle.scp.css"
+      "OriginalItemSpec": "D:\\POT\\software development\\SWD\\SWD\\SWDteam\\SWDteam\\obj\\x64\\Debug\\net6.0\\scopedcss\\projectbundle\\SWDteam.bundle.scp.css"
     },
     {
       "Identity": "D:\\POT\\software development\\SWD\\SWD\\SWDteam\\SWDteam\\wwwroot\\css\\site.css",
