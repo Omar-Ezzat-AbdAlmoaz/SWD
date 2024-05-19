@@ -37,8 +37,8 @@ namespace SWDteam.Controllers
             var department = await _context.departments
                 .Include(d => d.Category)
                 .FirstOrDefaultAsync(m => m.DepartmentID == id);
-            List<Course> Courses = _context.courses.Where(m => m.CourseId == id).ToList();
-            List<Instructor> instructors = _context.instructors.Where(m => m.InstructorId == id).ToList();
+            List<Course> Courses = _context.courses.Where(m => m.DepartmentID == id).ToList();
+            List<Instructor> instructors = _context.instructors.Where(m => m.DepartmentID == id).ToList();
 
             if (department == null)
             {

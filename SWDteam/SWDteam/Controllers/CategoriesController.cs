@@ -41,13 +41,14 @@ namespace SWDteam.Controllers
             var category = await _context.categories
                 .FirstOrDefaultAsync(m => m.CategoryId == id);
 
-            List<Department> departments = _context.departments.Where(m => m.DepartmentID == id).ToList();
-            List<Course> Courses = _context.courses.ToList();
+            List<Department> departments = _context.departments.Where(m => m.CategoryId == id).ToList();
+            //List<Course> courses = _context.courses.Where(m => m.DepartmentID == id).ToList();
             if (category == null)
             {
                 return NotFound();
             }
-
+            ViewBag.departments = departments;
+           // ViewBag.courses = courses;
             return View(category);
         }
 

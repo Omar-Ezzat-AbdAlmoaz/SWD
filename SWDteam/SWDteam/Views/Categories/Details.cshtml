@@ -9,37 +9,29 @@
 <div style="display:ruby;flex-wrap:wrap;margin: 0 -1.6rem -3.2rem 0;">
     <div style="display:block; margin: 0 1.6rem 1.6rem 0;">
         <img src="~/Img/@Model.CategoryImage" style="width: 150px;border-radius:30%" alt="Avatar" />
-    </div>
-    <div style="display:block; margin: 0 1.6rem 1.6rem 0;">
         <p class="text-muted">@Model.CategoryDescription </p>
+        <a asp-action="Edit" asp-route-id="@Model.CategoryId"><i class="bi bi-pencil-square"></i></a>
+        <a asp-action="Delete" asp-route-id="@Model.CategoryId"><i class="bi bi-trash3-fill"></i></a>
     </div>
+    
 </div>
 
 <div style="margin:20px 10px 20px 10px;">
     @if (Model.Departments != null)
     {
-        @foreach (var item in Model.Departments)
-        {
-            <a asp-controller="Departments" asp-action="Details" asp-route-id="@item.DepartmentID">
-                <h4>@Html.DisplayFor(modelItem => item.DepartmentName)</h4>
-            </a>
-            @if (item.Courses != null)
+        <div style="display:ruby;flex-wrap:wrap;margin: 0 -1.6rem -3.2rem 0;">
+            @foreach (var item in Model.Departments)
             {
-                <div style="display:ruby;flex-wrap:wrap;margin: 0 -1.6rem -3.2rem 0;">
-                    @foreach (var course in item.Courses)
-                    {
-                        <div style="display:block; margin: 0 1.6rem 1.6rem 0;">
-                            <a asp-controller="Courses" asp-action="Details" asp-route-id="@course.CourseId">
-                                <img src="~/Img/@course.CourseImage" alt="dept_image_here" style="border-radius:5%;width:200px; height:200px">
-                            </a>
-                            <span>
-                                <h4>@course.CourseName</h4>                           
-                            </span>
+                <a asp-controller="Departments" asp-action="Details" asp-route-id="@item.DepartmentID">
+                    <div class="card text-white bg-primary mb-3" style="width:300px;height:200px;">
+                        <div class="card-header" style="color:aliceblue">@item.DepartmentName</div>
+                        <div class="card-body">
+                            <p class="card-text" style="color:aliceblue">@item.DepartmentDescription</p>
                         </div>
-                    }
-                </div>
-                }         
-        }
+                    </div>
+                </a>
+            }
+        </div>
     }
 </div>
 
