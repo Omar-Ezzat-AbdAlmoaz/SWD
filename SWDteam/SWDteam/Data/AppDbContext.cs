@@ -18,11 +18,29 @@ namespace SWDteam.Data
         public DbSet<Course> courses { get; set; }
         public DbSet<Department> departments { get; set; }
         public DbSet<Instructor> instructors { get; set; }
-        public DbSet<Admin> admins { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            base.OnModelCreating(builder);
             builder.ApplyConfiguration(new ApplicationUserEntityConfiguration());
+            builder.Entity<IdentityRole>().HasData(
+                new IdentityRole()
+                {
+                    Id=Guid.NewGuid().ToString(),
+                    Name="Admin",
+                    NormalizedName="admin",
+                    ConcurrencyStamp= Guid.NewGuid().ToString(),
+                },
+                 new IdentityRole()
+                 {
+                     Id = Guid.NewGuid().ToString(),
+                     Name = "User",
+                     NormalizedName = "user",
+                     ConcurrencyStamp = Guid.NewGuid().ToString(),
+                 }
+
+                );
+
+
+            base.OnModelCreating(builder);
         }
        
     }

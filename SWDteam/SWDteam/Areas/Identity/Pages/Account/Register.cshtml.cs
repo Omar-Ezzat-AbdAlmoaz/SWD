@@ -5,6 +5,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Text.Encodings.Web;
@@ -81,6 +82,13 @@ namespace SWDteam.Areas.Identity.Pages.Account
             [DataType(DataType.Text)]
             [Display(Name = "Last Name")]
             public string LastName { get; set; }
+
+
+            [Required]
+            [DataType(DataType.Text)]
+            [Display(Name = "Role")]
+            public string? Role { get; set; }
+
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
@@ -132,11 +140,8 @@ namespace SWDteam.Areas.Identity.Pages.Account
                 user.PhoneNumber = Input.PhoneNumber;
                 user.FirstName = Input.FirstName;
                 user.LastName = Input.LastName;
-                //var uk = CreateUser2();
+                user.Role = Input.Role;
 
-               // user.UserName = Input.FirstName;
-               // user.UserName += " " + Input.LastName;
-                //user.FirstName = Input.FirstName;
                 
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
@@ -145,6 +150,11 @@ namespace SWDteam.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
+
+                    if((string)(user.Role)=="User") 
+                    await _userManager.AddToRoleAsync(user, "User");
+                    else if((string)(user.Role)=="Admin")
+                        await _userManager.AddToRoleAsync(user, "Admin");
 
                     var userId = await _userManager.GetUserIdAsync(user);
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);

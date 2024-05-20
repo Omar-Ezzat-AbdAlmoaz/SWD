@@ -6,10 +6,12 @@
 }
 
 <h1>Courses</h1>
-
-<p>
-    <a asp-action="Create" class="btn btn-primary"><i class="bi-plus-square"></i>&nbsp; Create New</a>
-</p>
+@if (User.IsInRole("Admin"))
+{
+    <p>
+        <a asp-action="Create" class="btn btn-primary"><i class="bi-plus-square"></i>&nbsp; Create New</a>
+    </p>
+}
 <div>
     @if (Model != null)
     {

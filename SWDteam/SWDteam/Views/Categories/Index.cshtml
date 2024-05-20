@@ -6,10 +6,11 @@
 }
 
 <h1>Categories</h1>
-
-<p>
-    <a asp-action="Create" class="btn btn-primary"><i class="bi-plus-square"></i>&nbsp; Create New</a>
-</p>
+@if (User.IsInRole("Admin"))
+{
+    <p>
+        <a asp-action="Create" class="btn btn-primary"><i class="bi-plus-square"></i>&nbsp; Create New</a>
+</p>}
 @if(Model != null){
     <div style="display:ruby;flex-wrap:wrap;margin: 0 -1.6rem -3.2rem 0;">
         @foreach (var item in Model) {

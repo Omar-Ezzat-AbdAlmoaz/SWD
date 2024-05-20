@@ -6,10 +6,12 @@
 }
 
 <h1>Departments</h1>
-
-<p>
+@if (User.IsInRole("Admin"))
+{
+    <p>
     <a asp-action="Create" class="btn btn-primary"><i class="bi-plus-square"></i>&nbsp;Create New</a>
-</p>
+</p> 
+}
 <table class="table">
     <thead>
         <tr>

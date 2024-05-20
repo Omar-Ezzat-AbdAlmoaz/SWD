@@ -52,6 +52,7 @@ namespace SWDteam.Controllers
         }
 
         // GET: Courses/Create
+        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             ViewData["DepartmentID"] = new SelectList(_context.departments, "DepartmentID", "DepartmentName");
@@ -64,6 +65,8 @@ namespace SWDteam.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
+
         public async Task<IActionResult> Create([Bind("CourseId,CourseName,CourseDescription,CourseDuration,CoursePrice,Coursedate,DepartmentID,InstructorID")] Course course, IFormFile img_file, IFormFile vedio_file)
         {
             string path = Path.Combine(_environment.WebRootPath, "Img");
@@ -122,6 +125,8 @@ namespace SWDteam.Controllers
         }
 
         // GET: Courses/Edit/5
+        [Authorize(Roles = "Admin")]
+
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.courses == null)
@@ -144,6 +149,8 @@ namespace SWDteam.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
+
         public async Task<IActionResult> Edit(int id, [Bind("CourseId,CourseName,CourseDescription,CourseDuration,CoursePrice,Coursedate,DepartmentID,InstructorID")] Course course,IFormFile img_file,IFormFile vedio_file)
         {
             if (id != course.CourseId)
@@ -208,6 +215,8 @@ namespace SWDteam.Controllers
         }
 
         // GET: Courses/Delete/5
+        [Authorize(Roles = "Admin")]
+
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.courses == null)

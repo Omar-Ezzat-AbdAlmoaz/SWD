@@ -13,5 +13,10 @@ namespace SWDteam.Data
         [PersonalData]
         [Column(TypeName = "nvarchar(50)")]
         public string? LastName { get; set;}
+        public string Role { get; internal set; }
+
+        //[PersonalData]
+        //[Column(TypeName = "nvarchar(50)")]
+        //public string? Role { get; set; }
     }
 }

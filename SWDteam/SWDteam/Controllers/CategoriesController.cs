@@ -55,32 +55,34 @@ namespace SWDteam.Controllers
         }
 
         // GET: Categories/Create
+        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             var Name = HttpContext.Session.GetString("Name");
 
-            if (string.IsNullOrEmpty(Name))
-            {
-                return RedirectToAction("Login2", "Admin");
-            }
-            else
-                return View();
+            //if (string.IsNullOrEmpty(Name))
+            //{
+            //return Redirect("/Identity/Account/Login");
+            //}
+            //else
+            return View();
         }
 
         // POST: Categories/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("CategoryName,CategoryDescription")] Category category, IFormFile img_file)
         {
             var Name = HttpContext.Session.GetString("Name");
-            if (string.IsNullOrEmpty(Name))
-            {
-                return RedirectToAction("Index", "Acount");
-            }
-            else
-            {
+            //if (string.IsNullOrEmpty(Name))
+            //{
+            //    return Redirect("/Identity/Account/Login");
+            //}
+            //else
+            //{
                 string path = Path.Combine(_environment.WebRootPath, "Img");
                 if (!Directory.Exists(path))
                 {
@@ -115,9 +117,11 @@ namespace SWDteam.Controllers
                     ViewBag.exc = ex.Message;
                 }
                 return View();
-            }
+            //}
         }
         // GET: Categories/Edit/5
+        [Authorize(Roles = "Admin")]
+
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.categories == null)
@@ -138,6 +142,8 @@ namespace SWDteam.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
+
         public async Task<IActionResult> Edit(int id, [Bind("CategoryId,CategoryName,CategoryDescription")] Category category, IFormFile img_file)
         {
             if (id != category.CategoryId)
@@ -186,6 +192,8 @@ namespace SWDteam.Controllers
         }
 
         // GET: Categories/Delete/5
+        [Authorize(Roles = "Admin")]
+
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.categories == null)
@@ -206,6 +214,8 @@ namespace SWDteam.Controllers
         // POST: Categories/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
+
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.categories == null)

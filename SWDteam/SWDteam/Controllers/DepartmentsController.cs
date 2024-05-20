@@ -29,6 +29,7 @@ namespace SWDteam.Controllers
         }
 
         // GET: Departments/Details/5
+
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.departments == null)
@@ -50,7 +51,10 @@ namespace SWDteam.Controllers
             return View(department);
         }
 
+
         // GET: Departments/Create
+        [Authorize(Roles = "Admin")]
+
         public IActionResult Create()
         {
             ViewData["CategoryId"] = new SelectList(_context.categories, "CategoryId", "CategoryName");
@@ -62,6 +66,8 @@ namespace SWDteam.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
+
         public async Task<IActionResult> Create([Bind("DepartmentID,DepartmentName,DepartmentDescription,CategoryId")] Department department)
         {
 
@@ -74,6 +80,8 @@ namespace SWDteam.Controllers
         }
 
         // GET: Departments/Edit/5
+        [Authorize(Roles = "Admin")]
+
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.departments == null)
@@ -94,6 +102,8 @@ namespace SWDteam.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
+
         public async Task<IActionResult> Edit(int id, [Bind("DepartmentId,DepartmentName,DepartmentDescription,CategoryId")] Department department)
         {
             if (id != department.DepartmentID)
@@ -127,6 +137,8 @@ namespace SWDteam.Controllers
         }
 
         // GET: Departments/Delete/5
+        [Authorize(Roles = "Admin")]
+
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.departments == null)

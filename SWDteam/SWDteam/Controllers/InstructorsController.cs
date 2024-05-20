@@ -50,6 +50,8 @@ namespace SWDteam.Controllers
         }
 
         // GET: Instructors/Create
+        [Authorize(Roles = "Admin")]
+
         public IActionResult Create()
         {
             ViewData["DepartmentID"] = new SelectList(_context.departments, "DepartmentID", "DepartmentName");
@@ -61,6 +63,8 @@ namespace SWDteam.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
+
         public async Task<IActionResult> Create([Bind("InstructorName,InstructorEmail,Instructorbiography,Instructorexperience,DepartmentID")] Instructor instructor, IFormFile img_file)
         {
             List<Instructor> instructors = _context.instructors.ToList();
@@ -131,6 +135,7 @@ namespace SWDteam.Controllers
             }
         }
 
+        [Authorize(Roles = "Admin")]
 
         // GET: Instructors/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -154,6 +159,8 @@ namespace SWDteam.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
+
         public async Task<IActionResult> Edit(int id, [Bind("InstructorId,InstructorName,InstructorEmail,Instructorbiography,Instructorexperience,DepartmentID")] Instructor instructor, IFormFile img_file)
         {
             if (id != instructor.InstructorId)
@@ -208,6 +215,8 @@ namespace SWDteam.Controllers
         }
 
         // GET: Instructors/Delete/5
+        [Authorize(Roles = "Admin")]
+
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.instructors == null)
