@@ -10,8 +10,11 @@
     <div style="display:block; margin: 0 1.6rem 1.6rem 0;">
         <img src="~/Img/@Model.CategoryImage" style="width: 150px;border-radius:30%" alt="Avatar" />
         <p class="text-muted">@Model.CategoryDescription </p>
-        <a asp-action="Edit" asp-route-id="@Model.CategoryId"><i class="bi bi-pencil-square"></i></a>
-        <a asp-action="Delete" asp-route-id="@Model.CategoryId"><i class="bi bi-trash3-fill"></i></a>
+        @if (User.IsInRole("Admin"))
+        {
+            <a class="btn btn-dark" asp-action="Edit" asp-route-id="@Model.CategoryId"><i class="bi bi-pencil-square"></i></a>
+            <a class="btn btn-danger" asp-action="Delete" asp-route-id="@Model.CategoryId"><i class="bi bi-trash3-fill"></i></a>
+        }
     </div>
     
 </div>
